@@ -1,6 +1,11 @@
 <template>
   <div class="content-warpper">
     <h1>Tooltip</h1>
+
+    <div class="content-breadcrumnb">
+      <BreadCrumnb :config="config" />
+    </div>
+
     <div class="components-show-warpper">
       <div class="components-show-item">
         <h2>正常用法</h2>
@@ -34,8 +39,7 @@
           <Tooltip title="bottom Left position" position="bottomLeft">
             <Button>bottom Left position</Button>
             <div>
-            <Button>bottom Left position</Button>
-
+              <Button>bottom Left position</Button>
             </div>
           </Tooltip>
 
@@ -136,7 +140,7 @@
 
       <div class="components-show-item">
         <h2>自定义tooltip的内容</h2>
-        <Tooltip  width="400px">
+        <Tooltip width="400px">
           <Button>自定义</Button>
           <template v-slot:title>
             <Button>自定义的内容</Button>
@@ -152,15 +156,27 @@ import { Options, Vue } from 'vue-class-component'
 
 import Button from '@/components/button/Button.vue'
 import Tooltip from '@/components/tooltip/Tooltip.vue'
+import BreadCrumnb from '@/components/breadCrumb/Breadcrumb.vue'
 
 @Options({
   components: {
     Tooltip,
-    Button
+    Button,
+    BreadCrumnb
   }
 })
 export default class TooltipPage extends Vue {
   tooltipVisible = false
+
+  config = [
+    {
+      text: 'Home',
+      path: '/'
+    },
+    {
+      text: 'Tooltip'
+    }
+  ]
 
   handleTooltipVisibleChange = () => {
     this.tooltipVisible = !this.tooltipVisible
