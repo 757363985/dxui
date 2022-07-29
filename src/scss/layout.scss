@@ -1,0 +1,163 @@
+@import './color.scss';
+
+$gold-border: 1px solid $gold-color;
+$red-border: 1px solid $red-color;
+$orange-border: 1px solid $orange-color;
+$yellow-border: 1px solid $yellow-color;
+$lime-border: 1px solid $lime-color;
+$green-border: 1px solid $green-color;
+$blue-border: 1px solid $blue-color;
+$pink-border: 1px solid $pink-color;
+$purple-border: 1px solid $purple-color;
+$border: 1px solid $border-color;
+
+$phone-min-width: 320px;
+$phone-max-width: 768px;
+$tablet-max-width: 1199px;
+$desktop-min-width: 1200px;
+
+@for $i from 1 through 18 {
+  .padding-#{$i} {
+    padding: 2px * $i;
+  }
+
+  .padding-lr-#{$i} {
+    padding: 0 2px * $i;
+  }
+
+  .padding-l-#{$i} {
+    padding-left: 2px * $i;
+  }
+
+  .padding-r-#{$i} {
+    padding-right: 2px * $i;
+  }
+
+  .padding-tb-#{$i} {
+    padding: 2px * $i 0;
+  }
+
+  .padding-t-#{$i} {
+    padding-top: 2px * $i;
+  }
+
+  .padding-b-#{$i} {
+    padding-bottom: 2px * $i;
+  }
+
+  .margin-#{$i} {
+    margin: 2px * $i;
+  }
+
+  .margin-lr-#{$i} {
+    margin: 0 2px * $i;
+  }
+
+  .margin-l-#{$i} {
+    margin-left: 2px * $i;
+  }
+
+  .margin-r-#{$i} {
+    margin-right: 2px * $i;
+  }
+
+  .margin-tb-#{$i} {
+    margin: 2px * $i 0;
+  }
+
+  .margin-t-#{$i} {
+    margin-top: 2px * $i;
+  }
+
+  .margin-b-#{$i} {
+    margin-bottom: 2px * $i;
+  }
+}
+
+.border {
+  border: $border;
+}
+
+.border-t {
+  border-top: $border;
+}
+
+.border-b {
+  border-bottom: $border;
+}
+
+.gold-border {
+  border: $gold-border;
+}
+
+.gold-border-t {
+  border-top: $gold-border;
+}
+
+.gold-border-b {
+  border-bottom: $gold-border;
+}
+
+.red-border {
+  border: $red-border;
+}
+
+.red-border-t {
+  border-top: $red-border;
+}
+
+.red-border-b {
+  border-bottom: $red-border;
+}
+
+.orange-border {
+  border: $orange-border;
+}
+
+.orange-border-t {
+  border-top: $orange-border;
+}
+
+.orange-border-b {
+  border-bottom: $orange-border;
+}
+
+.yellow-border {
+  border: $yellow-border;
+}
+
+.yellow-border-t {
+  border-top: $yellow-border;
+}
+
+.yellow-border-b {
+  border-bottom: $yellow-border;
+}
+
+.blue-border {
+  border: $blue-border;
+}
+
+.blue-border-t {
+  border-top: $blue-border;
+}
+
+.blue-border-b {
+  border-bottom: $blue-border;
+}
+
+.green-border {
+  border: $green-border;
+}
+
+.green-border-t {
+  border-top: $green-border;
+}
+
+.green-border-b {
+  border-bottom: $green-border;
+}
+
+.border-radius {
+  border-radius: 4px;
+}
