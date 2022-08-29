@@ -21,13 +21,13 @@ export default {
     // 自定义card头部
     const cardGroup: any = ref(null)
     const ClassName = `count-number-${propsData.columnNumber}`
-    const flowClassName = onMounted(() => {
+    onMounted(() => {
       // ref只能在onMounted里面才能获取
       const hasNotCardComponents = [...cardGroup.value.children].some((item: any) => {
         return item.className !== 'dx-card-warpper'
       })
       if (hasNotCardComponents) {
-        // 算是给开发者的题型，在CardGroup里只能使用card组件
+        // 算是给开发者的提醒，在CardGroup里只能使用card组件
         console.log(Error('Only Card components can be used in CardGroup'))
       }
     })

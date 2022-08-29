@@ -40,6 +40,18 @@
         <p>config中配置replace为true</p>
         <p>默认是false，也就是push</p>
       </Card>
+
+      <Card title="BreadCrumnbItem">
+        <BreadCrumnb>
+          <BreadCrumnbItem class="name-no-end" :config="{
+            path: '/'
+          }">Home</BreadCrumnbItem>
+          <span :style="{margin: '0 12px'}">|</span>
+          <BreadCrumnbItem class="name-end">BreadCrumnb</BreadCrumnbItem>
+        </BreadCrumnb>
+        <p>BreadCrumnbItem组件是配合BreadCrumnb使用的</p>
+        <p>这种方式相对来说可以自自定义的内容更多，可扩展性更强，但也没那么方便</p>
+      </Card>
     </CardGroup>
   </div>
 </template>
@@ -54,7 +66,8 @@ import CardGroup from '@/components/cardGroup/CardGroup.vue'
   components: {
     Card,
     CardGroup,
-    BreadCrumnb
+    BreadCrumnb,
+    BreadCrumnbItem: BreadCrumnb.item
   }
 })
 export default class BreadCrumnbPage extends Vue {

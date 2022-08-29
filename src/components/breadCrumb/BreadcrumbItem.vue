@@ -5,31 +5,42 @@
 </template>
 
 <script lang="ts">
-import { ComponentInternalInstance, getCurrentInstance, ref, PropType } from 'vue'
-// import { useRouter } from 'vue-router'
+import { ComponentInternalInstance, getCurrentInstance, PropType } from 'vue'
+import { useRouter } from 'vue-router'
 
-// import { ConfigType, ConfigItemType } from './types/index'
+import { ConfigItemType, Data } from './types/index'
 
 export default {
   props: {
-    text: {
-      required: false,
-      default: '',
-      type: String
-    },
     className: {
       require: false,
       default: '',
       type: String
+    },
+    config: {
+      require: false,
+      default: undefined,
+      type: Object as PropType<ConfigItemType>
     }
   },
-  setup() {
+  setup(props: Data) {
     const currentInstance: ComponentInternalInstance | null = getCurrentInstance()
+    const userRouter = useRouter()
 
     const breadCrumbItemClick = function (e: Event) {
-      currentInstance?.emit('click', e)
       e.stopPropagation()
       e.stopImmediatePropagation()
+
+      const config = props.config as ConfigItemType
+      if (config && !config.onClick) {
+        userRouter.push({
+          ...(props.config as any)
+        })
+      } else if (config && typeof config.onClick === 'function') {
+        config.onClick()
+      } else {
+        currentInstance?.emit('click', e)
+      }
     }
 
     return {

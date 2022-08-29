@@ -1,5 +1,11 @@
 export interface Data {
+  [key: string]: any
+}
+
+export interface ItemData {
   [key: string]: unknown
+  className: string
+  config: ConfigPathItemType
 }
 
 export type ConfigPathItemType = {
