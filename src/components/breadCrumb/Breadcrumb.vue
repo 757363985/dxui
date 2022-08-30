@@ -6,7 +6,7 @@
         <BreadcrumbItem
           v-if="index < config.length - 1"
           className="name-no-end"
-          @click="breadCrumbClick($event, item)"
+          :config="item"
           >{{ item.text }}</BreadcrumbItem
         >
 
@@ -22,11 +22,10 @@
 
 <script lang="ts">
 import { ComponentInternalInstance, getCurrentInstance, ref, PropType } from 'vue'
-import { useRouter } from 'vue-router'
 
 import BreadcrumbItem from './BreadcrumbItem.vue'
 
-import { ConfigType, ConfigItemType } from './types/index'
+import { ConfigType } from './types/index'
 
 export default {
   props: {
@@ -46,20 +45,6 @@ export default {
   setup() {
     const currentInstance: ComponentInternalInstance | null = getCurrentInstance()
 
-    // vue3 手动执行路由控制
-    const userRouter = useRouter()
-
-    const breadCrumbClick = function (e: Event, configItem: ConfigItemType) {
-      if (!configItem.onClick) {
-        // vue3 手动执行replace
-        userRouter.push({
-          ...(configItem as any)
-        })
-      } else if (configItem.onClick && typeof configItem.onClick === 'function') {
-        configItem.onClick()
-      }
-    }
-
     // 自定义内容是否显示
     const showCustomContent = ref(false)
     const customContent = currentInstance?.slots.default
@@ -69,7 +54,6 @@ export default {
     }
 
     return {
-      breadCrumbClick,
       showCustomContent
     }
   },

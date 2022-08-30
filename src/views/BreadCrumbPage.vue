@@ -44,8 +44,9 @@
       <Card title="BreadCrumnbItem">
         <BreadCrumnb>
           <BreadCrumnbItem class="name-no-end" :config="{
-            path: '/'
-          }">Home</BreadCrumnbItem>
+            path: '/',
+            text: 'Home'
+          }"></BreadCrumnbItem>
           <span :style="{margin: '0 12px'}">|</span>
           <BreadCrumnbItem class="name-end">BreadCrumnb</BreadCrumnbItem>
         </BreadCrumnb>
