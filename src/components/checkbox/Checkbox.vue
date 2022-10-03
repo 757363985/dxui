@@ -40,22 +40,24 @@ export default {
   },
   setup(props: Data) {
     const currentInstance: ComponentInternalInstance | null = getCurrentInstance()
-    const checkedValue = ref(props.checked || props.defaultChecked)
+    const checkedValue = ref(props.checked)
     const checkedDisabled = ref(props.disabled)
+
+    if (props.checked === true) {
+      checkedValue.value = true
+    } else if (props.checked === false) {
+      checkedValue.value = false
+    } else if (props.defaultChecked === true) {
+      checkedValue.value = true
+    } else if (props.defaultChecked === false) {
+      checkedValue.value = false
+    }
 
     const onCheckedValueChange = function (e: Event) {
       if (props.checked !== undefined) {
-        this.checkedValue = props.checked
+        checkedValue.value = props.checked
       }
       currentInstance?.emit('change', e)
-    }
-
-    // 自定义card头部
-    const showTitle = ref(false)
-    const title = currentInstance?.slots.title
-
-    if (title) {
-      showTitle.value = true
     }
 
     return {
