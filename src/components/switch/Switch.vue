@@ -108,6 +108,7 @@ export default {
   cursor: pointer;
   display: inline-block;
   position: relative;
+  user-select: none;
 
   .dx-switch-status {
     width: 100%;

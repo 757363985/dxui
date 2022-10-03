@@ -33,9 +33,9 @@
       <Card title="可以提供开启和关闭状态下的文案">
         <Switch :defaultChecked="true" openText="开弹幕" closeText="关弹幕" />
         <Switch :defaultChecked="false" openText="开弹幕" closeText="关弹幕" />
-        <p>
-          通过openText为switch组件提供开启状态下文案，closeText为switch组件提供关闭状态下的文案
-        </p>
+        <Switch :defaultChecked="true" openText="开" closeText="关" />
+        <Switch :defaultChecked="false" openText="开" closeText="关" />
+        <p>通过openText为switch组件提供开启状态下文案，closeText为switch组件提供关闭状态下的文案</p>
       </Card>
     </CardGroup>
   </div>
