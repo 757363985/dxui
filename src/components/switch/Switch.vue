@@ -31,11 +31,6 @@ export default {
       default: false,
       type: Boolean
     },
-    onChange: {
-      required: false,
-      default: undefined,
-      type: Function
-    },
     openText: {
       required: false,
       default: '',
@@ -55,16 +50,16 @@ export default {
     const switchStatusText = ref('')
 
     const changeSwitchStatus = function (e: Event) {
-      currentInstance?.emit('change', checkedValue.value)
-
       if (props.disabled) {
         return
       }
+      currentInstance?.emit('switchClick', checkedValue.value, e)
 
       if (props.checked !== undefined) {
         checkedValue.value = props.checked
       } else if (!props.disabled) {
         checkedValue.value = !checkedValue.value
+        currentInstance?.emit('change', checkedValue.value, e)
       }
     }
 

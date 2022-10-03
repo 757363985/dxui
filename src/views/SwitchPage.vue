@@ -37,6 +37,17 @@
         <Switch :defaultChecked="false" openText="开" closeText="关" />
         <p>通过openText为switch组件提供开启状态下文案，closeText为switch组件提供关闭状态下的文案</p>
       </Card>
+
+      <Card title="@switchClick事件">
+        <Switch :defaultChecked="true" @switchClick="handleClickSwitch" />
+        <Switch :defaultChecked="false" />
+        <p>switchClick事件，第一个参数是switch当前的状态boolean值，第二个参数为事件对象</p>
+      </Card>
+
+      <Card title="@change事件">
+        <Switch :defaultChecked="true" @change="handleClickSwitch" />
+        <p>change事件，第一个参数是switch想要改变的状态 boolean值，第二个参数为事件对象，switchClick事件会在change事件前执行</p>
+      </Card>
     </CardGroup>
   </div>
 </template>
@@ -68,6 +79,10 @@ export default class BreadCrumnbPage extends Vue {
       path: 'switch'
     }
   ]
+
+  handleClickSwitch(value, event) {
+    console.log(value, event)
+  }
 }
 </script>
 
