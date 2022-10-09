@@ -7,6 +7,7 @@
     <router-link to="tooltip"> <Button>tooltip</Button> </router-link>
     <router-link to="card"> <Button>card</Button> </router-link>
     <router-link to="breadCrumb"> <Button>breadCrumb</Button> </router-link>
+    <router-link to="checkbox"> <Button>checkbox</Button> </router-link>
   </div>
 </template>
 

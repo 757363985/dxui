@@ -3,12 +3,9 @@
     <slot v-if="showCustomContent" />
     <template v-else>
       <div class="dx-breadcrumb-item" v-for="(item, index) in config" :key="item.name">
-        <BreadcrumbItem
-          v-if="index < config.length - 1"
-          className="name-no-end"
-          :config="item"
-          >{{ item.text }}</BreadcrumbItem
-        >
+        <BreadcrumbItem v-if="index < config.length - 1" className="name-no-end" :config="item">{{
+          item.text
+        }}</BreadcrumbItem>
 
         <BreadcrumbItem v-else class="name-end">{{ item.text }}</BreadcrumbItem>
 
