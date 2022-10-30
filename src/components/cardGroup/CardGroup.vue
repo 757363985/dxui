@@ -24,7 +24,7 @@ export default {
     onMounted(() => {
       // ref只能在onMounted里面才能获取
       const hasNotCardComponents = [...cardGroup.value.children].some((item: any) => {
-        return item.className !== 'dx-card-warpper'
+        return !item.className.includes('dx-card-warpper')
       })
       if (hasNotCardComponents) {
         // 算是给开发者的提醒，在CardGroup里只能使用card组件

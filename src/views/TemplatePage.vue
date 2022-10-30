@@ -8,6 +8,7 @@
     <CardGroup :columnNumber="2">
       <Card title="基本用法">
         <div>123</div>
+        <p class="dx-components-description">简单介绍</p>
       </Card>
     </CardGroup>
   </div>

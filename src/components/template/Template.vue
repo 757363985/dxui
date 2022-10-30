@@ -1,10 +1,10 @@
 <template>
-  <div>template</div>
+  <div>{{ someData }}</div>
 </template>
 
 <script lang="ts">
 import { ComponentInternalInstance, getCurrentInstance, PropType, ref } from 'vue'
-import { useRouter } from 'vue-router'
+// import { useRouter } from 'vue-router'
 
 import { Data } from './types/index'
 
@@ -15,11 +15,17 @@ export default {
       require: false,
       default: '',
       type: String
-    },
+    }
   },
-  setup(props: Data) {
+  async setup(props: Data) {
     const currentInstance: ComponentInternalInstance | null = getCurrentInstance()
-    return {}
+    const someData = ref('dx')
+    const result = await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        return resolve({ someData })
+      }, 3000)
+    })
+    return result
   }
 }
 </script>

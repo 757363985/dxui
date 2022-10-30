@@ -153,6 +153,7 @@ export default {
   height: 100vh;
   background: rgba(0, 0, 0, 0.3);
   user-select: none;
+  z-index: 10000;
 
   .dx-dialog-inner {
     display: table-cell;

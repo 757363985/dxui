@@ -51,6 +51,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "Checkbox" */ '../views/CheckboxPage.vue')
   },
   {
+    path: '/checkboxGroup',
+    name: 'CheckboxGroup',
+    component: () => import(/* webpackChunkName: "CheckboxGroup" */ '../views/CheckboxGroupPage.vue')
+  },
+  {
     path: '/switch',
     name: 'Switch',
     component: () => import(/* webpackChunkName: "Switch" */ '../views/SwitchPage.vue')

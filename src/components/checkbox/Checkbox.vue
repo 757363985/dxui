@@ -1,22 +1,33 @@
 <template>
-  <div class="dx-checkbox-warpper" :class="checkedDisabled ? 'dx-checkbox-disabled' : ''">
-    <input
-      class="dx-checkbox-input"
-      type="checkbox"
-      v-model="checkedValue"
-      :disabled="checkedDisabled"
-      @change="onCheckedValueChange"
-    />
-    <span class="dx-checkbox-text"><slot /></span>
+  <div
+    class="dx-checkbox-warpper"
+    :class="checkedDisabled ? 'dx-checkbox-disabled' : ''"
+    @click="onClickCheckboxWarpper"
+  >
+    <div class="dx-checkbox-input" :class="checkedValue ? 'dx-checkbox-input-checked' : ''"></div>
+    <label class="dx-checkbox-text"><slot /></label>
   </div>
 </template>
 
 <script lang="ts">
-import { ComponentInternalInstance, getCurrentInstance, ref, PropType } from 'vue'
+import {
+  ref,
+  SetupContext,
+  watch,
+  inject,
+  ComponentInternalInstance,
+  getCurrentInstance,
+  watchEffect
+} from 'vue'
 import { Data } from './types'
 
 export default {
   props: {
+    value: {
+      required: false,
+      default: '',
+      type: String
+    },
     checked: {
       required: false,
       default: undefined,
@@ -31,39 +42,88 @@ export default {
       required: false,
       default: false,
       type: Boolean
-    },
-    onChange: {
-      required: false,
-      default: undefined,
-      type: Function
     }
   },
-  setup(props: Data) {
+  setup(props: Data, ctx: SetupContext) {
     const currentInstance: ComponentInternalInstance | null = getCurrentInstance()
-    const checkedValue = ref(props.checked)
-    const checkedDisabled = ref(props.disabled)
 
-    if (props.checked === true) {
-      checkedValue.value = true
-    } else if (props.checked === false) {
-      checkedValue.value = false
-    } else if (props.defaultChecked === true) {
-      checkedValue.value = true
-    } else if (props.defaultChecked === false) {
-      checkedValue.value = false
-    }
+    // 选中状态的值
+    const checkedValue = ref(props?.checked || undefined)
 
-    const onCheckedValueChange = function (e: Event) {
-      if (props.checked !== undefined) {
-        checkedValue.value = props.checked
+    // 禁用状态的值
+    let checkedDisabled = ref(props?.disabled)
+
+    // 来自CheckboxGroup的配置
+    let checkboxGroupConfig: any = ''
+    watchEffect(() => {
+      if (props.checked === true) {
+        checkedValue.value = true
+      } else if (props.checked === false) {
+        checkedValue.value = false
+      } else if (props.defaultChecked === true) {
+        checkedValue.value = true
+      } else if (props.defaultChecked === false) {
+        checkedValue.value = false
       }
-      currentInstance?.emit('change', e)
+    })
+
+    // 如果父组件使用了CheckboxGroup
+    if (currentInstance?.parent?.type?.name === 'CheckboxGroup') {
+      checkboxGroupConfig = inject('checkboxGroupConfig')
+      watchEffect(() => {
+        if (checkboxGroupConfig) {
+          const checkboxGroupConfigValue = checkboxGroupConfig?.value?.some((item: string) => {
+            return item === props.value
+          })
+          const checkboxGroupConfigDefaultValue = checkboxGroupConfig?.defaultValue?.some(
+            (item: string) => {
+              return item === props.value
+            }
+          )
+
+          if (checkboxGroupConfigValue === true) {
+            checkedValue.value = true
+          } else if (checkboxGroupConfigValue === false) {
+            checkedValue.value = false
+          } else if (checkboxGroupConfigDefaultValue === true) {
+            checkedValue.value = true
+          } else if (checkboxGroupConfigDefaultValue === false) {
+            checkedValue.value = false
+          }
+
+          checkedDisabled = ref(checkboxGroupConfig?.disabled || props?.disabled)
+        }
+      })
     }
+
+    const onClickCheckboxWarpper = function () {
+      // 父组件重新定义了chebox的状态，组件自身不能更改
+      if (
+        props.checked === undefined &&
+        !checkedDisabled.value &&
+        checkboxGroupConfig.value === undefined
+      ) {
+        checkedValue.value = !checkedValue.value
+      }
+
+      if (props.disabled) {
+        return false
+      } else {
+        ctx?.emit('clickCheckbox', checkedValue.value)
+      }
+    }
+
+    watch(checkedValue, (newVal) => {
+      ctx?.emit('changeCheckbox', newVal)
+      if (typeof checkboxGroupConfig?.changeCheckbox === 'function') {
+        checkboxGroupConfig.changeCheckbox(props.value, newVal)
+      }
+    })
 
     return {
       checkedValue,
       checkedDisabled,
-      onCheckedValueChange
+      onClickCheckboxWarpper
     }
   }
 }
@@ -74,82 +134,82 @@ export default {
 .dx-checkbox-warpper {
   display: inline-block;
   margin-right: 8px;
+  margin-bottom: 8px;
+  user-select: none;
+  cursor: pointer;
+
   .dx-checkbox-text {
     padding: 0 8px;
     font-size: 14px;
     vertical-align: text-top;
-  }
-  input[type='checkbox'] {
     cursor: pointer;
-    font-size: 14px;
-    width: 16px;
-    height: 16px;
-    position: relative;
   }
 
-  input[type='checkbox']:after {
-    position: absolute;
+  .dx-checkbox-input {
+    cursor: pointer;
     width: 16px;
     height: 16px;
-    top: 0;
-    content: ' ';
-    color: $white-color;
+    border-radius: 2px;
     display: inline-block;
-    visibility: visible;
-    padding: 0px 3px;
-    border-radius: 3px;
-    background: $white-color;
-    border: $border;
-    box-sizing: border-box;
+    border: 1px solid $border-color;
   }
-
-  input[type='checkbox']:checked:after {
-    content: '\2713';
-    font-size: 12px;
-    font-weight: 600;
+  .dx-checkbox-input-checked {
+    padding: 3px 3px;
     background-color: $blue-color;
-    border: none;
+    border: 1px solid $blue-color;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: ' ';
+      width: 4px;
+      height: 8px;
+      transform: rotate(45deg);
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      top: 0px;
+      left: 4px;
+    }
   }
 }
 
 .dx-checkbox-disabled {
   cursor: not-allowed;
+
   .dx-checkbox-text {
     padding: 0 8px;
     font-size: 14px;
     vertical-align: text-top;
     color: $grey-color;
-  }
-  input[type='checkbox'] {
     cursor: not-allowed;
-    font-size: 14px;
-    width: 16px;
-    height: 16px;
-    position: relative;
   }
 
-  input[type='checkbox']:after {
-    position: absolute;
+  .dx-checkbox-input {
+    cursor: not-allowed;
     width: 16px;
     height: 16px;
-    top: 0;
-    content: ' ';
-    color: $white-color;
+    border-radius: 2px;
     display: inline-block;
-    visibility: visible;
-    padding: 0px 3px;
-    border-radius: 3px;
-    background: $white-color;
-    border: $border;
-    box-sizing: border-box;
+    border: 1px solid $border-color;
   }
 
-  input[type='checkbox']:checked:after {
-    content: '\2713';
-    font-size: 12px;
-    font-weight: 600;
-    background-color: $grey-color;
-    border: none;
+  .dx-checkbox-input-checked {
+    padding: 3px 3px;
+    background-color: $border-color;
+    border: 1px solid transparent;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: ' ';
+      width: 4px;
+      height: 8px;
+      transform: rotate(45deg);
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      top: 0px;
+      left: 4px;
+    }
   }
 }
 </style>

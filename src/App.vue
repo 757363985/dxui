@@ -41,6 +41,10 @@ body {
   }
 }
 
+.dx-components-description {
+  margin: 8px 0;
+}
+
 .dx-button-divide {
   display: inline-block;
   margin: 0 4px;
