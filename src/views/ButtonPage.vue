@@ -1,10 +1,12 @@
 <template>
   <div class="content-warpper">
-    <h1>button</h1>
+    <h1>Button</h1>
+    <!-- <div class="content-breadcrumnb">
+      <BreadCrumnb :config="config1" />
+    </div> -->
 
-    <div class="components-show-warpper">
-      <div class="components-show-item">
-        <h2>size</h2>
+    <CardGroup :columnNumber="2">
+      <Card title="size属性">
         <Button size="large">
           <span>large</span>
         </Button>
@@ -16,11 +18,9 @@
         <Button size="small">
           <span>small</span>
         </Button>
-      </div>
+      </Card>
 
-      <div class="components-show-item">
-        <h2>type</h2>
-
+      <Card title="type属性">
         <div style="background: yellow">
           <Button type="info">
             <span>info</span>
@@ -42,11 +42,9 @@
             <span>ghost</span>
           </Button>
         </div>
-      </div>
+      </Card>
 
-      <div class="components-show-item">
-        <h2>mode</h2>
-
+      <Card title="mode属性">
         <Button mode="normal">
           <span>normal</span>
         </Button>
@@ -94,17 +92,9 @@
         <Button mode="dashed" type="danger" disabled>
           <span>dashed ghost</span>
         </Button>
-      </div>
+      </Card>
 
-      <div class="components-show-item">
-        <h2>disabled</h2>
-        <Button disabled>
-          <span>disabled</span>
-        </Button>
-      </div>
-
-      <div class="components-show-item">
-        <h2>block</h2>
+      <Card title="block属性">
         <Button block>
           <span>block</span>
         </Button>
@@ -112,18 +102,21 @@
         <Button block size="large">
           <span>block large</span>
         </Button>
-      </div>
+      </Card>
 
-      <div class="components-show-item">
-        <h2>click 事件</h2>
+      <Card title="disabled属性">
+        <Button disabled>
+          <span>disabled</span>
+        </Button>
+      </Card>
+
+      <Card title="click 事件">
         <Button @click="handleClickButton">
           <span>事件</span>
         </Button>
-      </div>
+      </Card>
 
-      <div class="components-show-item">
-        <h2>shape</h2>
-
+      <Card title="shape属性">
         <Button shape="circle" size="small" mode="text"> circle </Button>
         <div class="dx-button-divide" />
         <Button shape="circle" type="warning"> circle </Button>
@@ -135,21 +128,37 @@
         <Button shape="round" mode="text"> round </Button>
         <div class="dx-button-divide" />
         <Button shape="round" size="large" type="danger"> round </Button>
-      </div>
-    </div>
+      </Card>
+    </CardGroup>
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
-import Button from '@/components/button/Button.vue' // @ is an alias to /src
-
+import Button from '@/components/button/Button.vue'
+// import BreadCrumnb from '@/components/breadCrumb/Breadcrumb.vue'
+import Card from '@/components/card/Card.vue'
+import CardGroup from '@/components/cardGroup/CardGroup.vue'
 @Options({
   components: {
+    Card,
+    CardGroup,
     Button
+    // BreadCrumnb
   }
 })
 export default class Home extends Vue {
+  // config1 = [
+  //   {
+  //     text: 'Home',
+  //     path: '/'
+  //   },
+  //   {
+  //     text: 'Button',
+  //     path: 'button'
+  //   }
+  // ]
+
   handleClickButton() {
     alert('点击按钮事件')
   }

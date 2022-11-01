@@ -1,9 +1,9 @@
 <template>
   <div class="content-warpper">
     <h1>Checkbox</h1>
-    <div class="content-breadcrumnb">
+    <!-- <div class="content-breadcrumnb">
       <BreadCrumnb :config="breadConfig" />
-    </div>
+    </div> -->
 
     <CardGroup :columnNumber="2">
       <Card title="基本用法">
@@ -80,7 +80,7 @@
 
 <script>
 import { Options, Vue } from 'vue-class-component'
-import BreadCrumnb from '@/components/breadCrumb/Breadcrumb.vue'
+// import BreadCrumnb from '@/components/breadCrumb/Breadcrumb.vue'
 import Card from '@/components/card/Card.vue'
 import CardGroup from '@/components/cardGroup/CardGroup.vue'
 import Checkbox from '@/components/checkbox/Checkbox.vue'
@@ -90,8 +90,8 @@ import { reactive, ref } from 'vue'
   components: {
     Card,
     CardGroup,
-    BreadCrumnb,
-    BreadCrumnbItem: BreadCrumnb.item,
+    // BreadCrumnb,
+    // BreadCrumnbItem: BreadCrumnb.item,
     Checkbox
   }
 })

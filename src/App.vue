@@ -6,16 +6,28 @@
 @import './scss/layout.scss';
 @import './scss/html.scss';
 body {
-  padding: 8px;
+  // padding: 8px;
   text-align: center;
 }
 
 .content-warpper {
-  width: 1200px;
+  max-width: 1200px;
   text-align: initial;
   display: inline-block;
   h1 {
     margin-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .content-warpper {
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-warpper {
+    padding: 24px;
   }
 }
 
@@ -47,6 +59,6 @@ body {
 
 .dx-button-divide {
   display: inline-block;
-  margin: 0 4px;
+  margin: 4px;
 }
 </style>

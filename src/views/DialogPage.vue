@@ -1,9 +1,8 @@
 <template>
   <div class="content-warpper">
     <h1>Dialog</h1>
-    <div class="components-show-warpper">
-      <div class="components-show-item">
-        <h2>常规的dialog</h2>
+    <CardGroup :columnNumber="2">
+      <Card title="常规的dialog">
         <Button @click="changeNormalVisible">常规的dialog</Button>
         <Dialog
           :visible="normalViaible"
@@ -14,10 +13,8 @@
         >
           这是内容这是内容这是内容这是内容这是内容
         </Dialog>
-      </div>
-
-      <div class="components-show-item">
-        <h2>自定义footer的dialog</h2>
+      </Card>
+      <Card title="自定义footer的dialog">
         <Button @click="changeNormalVisible1">自定义footer</Button>
         <Dialog
           :visible="normalViaible1"
@@ -29,10 +26,9 @@
           这是内容这是内容这是内容这是内容这是内容
           <template v-slot:footerContent> 这是自定义footer的内容 </template>
         </Dialog>
-      </div>
+      </Card>
 
-      <div class="components-show-item">
-        <h2>自定义header的dialog</h2>
+      <Card title="自定义header的dialog">
         <Button @click="changeNormalVisible2">自定义header</Button>
         <Dialog
           :visible="normalViaible2"
@@ -44,24 +40,22 @@
           <template v-slot:headerContent> 这是自定义header的内容 </template>
           这是内容这是内容这是内容这是内容这是内容
         </Dialog>
-      </div>
+      </Card>
 
-      <div class="components-show-item">
-        <h2>自定义宽度的dialog</h2>
-        <Button @click="changeNormalVisible3">1000px的dialog</Button>
+      <Card title="自定义宽度的dialog">
+        <Button @click="changeNormalVisible3">400px的dialog</Button>
         <Dialog
           :visible="normalViaible3"
           @cancel="handleClickCancelButton3(1, 2, 3, $event)"
           @confirm="handleConfirmButton3"
           title="这是标题"
-          width="1000px"
+          width="400px"
         >
           这是内容这是内容这是内容这是内容这是内容
         </Dialog>
-      </div>
+      </Card>
 
-      <div class="components-show-item">
-        <h2>自定义按钮文字的dialog</h2>
+      <Card title="自定义按钮文字的dialog">
         <Button @click="changeNormalVisible4">自定义按钮文字的dialog</Button>
         <Dialog
           :visible="normalViaible4"
@@ -73,10 +67,9 @@
         >
           这是内容这是内容这是内容这是内容这是内容
         </Dialog>
-      </div>
+      </Card>
 
-      <div class="components-show-item">
-        <h2>通知的dialog</h2>
+      <Card title="通知的dialog">
         <Button @click="changeNormalVisible5">通知的dialog</Button>
         <Dialog
           :visible="normalViaible5"
@@ -85,12 +78,12 @@
           confirmText="知道了"
           :showCancelButton="false"
           width="400px"
-          title="年终奖通知"
+          title="放假通知"
         >
-          明天发年终奖10w
+          从今以后你都不用来了
         </Dialog>
-      </div>
-    </div>
+      </Card>
+    </CardGroup>
   </div>
 </template>
 
@@ -98,11 +91,15 @@
 import { Options, Vue } from 'vue-class-component'
 import Dialog from '@/components/dialog/Dialog.vue'
 import Button from '@/components/button/Button.vue'
+import CardGroup from '@/components/cardGroup/CardGroup.vue'
+import Card from '@/components/card/Card.vue'
 
 @Options({
   components: {
     Dialog,
-    Button
+    Button,
+    Card,
+    CardGroup
   }
 })
 export default class Home extends Vue {

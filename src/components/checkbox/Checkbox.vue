@@ -167,7 +167,7 @@ export default {
       transform: rotate(45deg);
       border-right: 2px solid #fff;
       border-bottom: 2px solid #fff;
-      top: 0px;
+      top: 1px;
       left: 4px;
     }
   }
@@ -207,7 +207,7 @@ export default {
       transform: rotate(45deg);
       border-right: 2px solid #fff;
       border-bottom: 2px solid #fff;
-      top: 0px;
+      top: 1px;
       left: 4px;
     }
   }

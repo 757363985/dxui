@@ -1,9 +1,9 @@
 <template>
   <div class="content-warpper">
     <h1>BreadCrumnb</h1>
-    <div class="content-breadcrumnb">
+    <!-- <div class="content-breadcrumnb">
       <BreadCrumnb :config="config1" />
-    </div>
+    </div> -->
 
     <CardGroup :columnNumber="2">
       <Card title="基本用法">

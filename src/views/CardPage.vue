@@ -1,9 +1,9 @@
 <template>
   <div class="content-warpper">
     <h1>Card</h1>
-    <div class="content-breadcrumnb">
+    <!-- <div class="content-breadcrumnb">
       <BreadCrumnb :config="config" />
-    </div>
+    </div> -->
 
     <CardGroup :columnNumber="2">
       <Card title="正常用法,这是title"> 这是内容 </Card>
@@ -88,7 +88,7 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component'
 import Card from '@/components/card/Card.vue'
-import BreadCrumnb from '@/components/breadCrumb/Breadcrumb.vue'
+// import BreadCrumnb from '@/components/breadCrumb/Breadcrumb.vue'
 import CardGroup from '@/components/cardGroup/CardGroup.vue'
 import Button from '@/components/button/Button.vue'
 
@@ -96,8 +96,8 @@ import Button from '@/components/button/Button.vue'
   components: {
     Card,
     CardGroup,
-    Button,
-    BreadCrumnb
+    Button
+    // BreadCrumnb
   }
 })
 export default class CardPage extends Vue {
