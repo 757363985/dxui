@@ -1,12 +1,12 @@
 <template>
-  <div class="content-warpper">
+  <div class="dx-page-content-warpper">
     <h1>Tooltip</h1>
 
     <!-- <div class="content-breadcrumnb">
       <BreadCrumnb :config="config" />
     </div> -->
 
-    <CardGroup :columnNumber="2">
+    <CardGroup :columnNumber="1">
       <Card title="正常用法">
         <Tooltip title="dx永远18岁">
           <Button>Hover</Button>

@@ -57,6 +57,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'switch',
         name: 'Switch',
         component: () => import(/* webpackChunkName: "Switch" */ '../views/SwitchPage.vue')
+      },
+      {
+        path: 'code',
+        name: 'Code',
+        component: () => import(/* webpackChunkName: "Code" */ '../views/CodePage.vue')
       }
     ]
   },

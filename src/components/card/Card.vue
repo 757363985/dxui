@@ -2,7 +2,7 @@
   <div
     @click="cardClick"
     class="dx-card-warpper"
-    :class="hover"
+    :class="border ? `${hover} dx-card-border-warpper` : `${hover}`"
     :style="background ? { background } : {}"
   >
     <div class="dx-card-title" v-if="showTitle">
@@ -38,6 +38,11 @@ export default {
       required: false,
       default: '',
       type: String
+    },
+    border: {
+      required: false,
+      default: false,
+      type: Boolean
     }
   },
   setup() {
@@ -68,12 +73,12 @@ export default {
 
 .dx-card-warpper {
   border-radius: 4px;
-  border: $border;
   width: 100%;
+  background: $white-color;
+  box-shadow: $box-shadow;
 
   .dx-card-title {
-    border-bottom: $border;
-    padding: 24px;
+    padding: 24px 24px 0 24px;
   }
 
   .dx-card-title-default {
@@ -84,6 +89,14 @@ export default {
 
   .dx-card-content {
     padding: 24px;
+  }
+}
+
+.dx-card-border-warpper {
+  border: $border;
+  .dx-card-title {
+    padding: 24px;
+    border-bottom: $border;
   }
 }
 

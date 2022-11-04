@@ -1,11 +1,11 @@
 <template>
-  <div class="content-warpper">
+  <div class="dx-page-content-warpper">
     <h1>CheckboxGroup</h1>
     <!-- <div class="content-breadcrumnb">
       <BreadCrumnb :config="config1" />
     </div> -->
 
-    <CardGroup :columnNumber="2">
+    <CardGroup :columnNumber="1">
       <Card title="基本用法">
         <CheckboxGroup>
           <Checkbox>1111</Checkbox>

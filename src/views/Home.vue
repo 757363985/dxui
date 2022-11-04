@@ -34,6 +34,9 @@
         <router-link active-class="dx-nav-active-button" to="/home/switch">
           <div class="dx-nav-button">switch</div>
         </router-link>
+        <router-link active-class="dx-nav-active-button" to="/home/code">
+          <div class="dx-nav-button">code</div>
+        </router-link>
       </div>
 
       <div class="dx-content-center">
@@ -67,7 +70,7 @@ export default {
 .dx-home {
   // background: url(../assets/home_back.jpg);
   min-height: 100vh;
-  background: $background-color;
+  // background: $background-color;
 }
 .dx-home-header {
   height: 80px;
@@ -144,12 +147,37 @@ export default {
   }
   .dx-content-center {
     display: inline-block;
+    width: calc(100% - 208px);
     vertical-align: top;
-    background: #fff;
-    box-shadow: 0 8px 12px #ebedf0;
-    margin: 0px 24px 24px 232px;
+    // background: #fff;
+    // box-shadow: 0 8px 12px #ebedf0;
+    margin: 0px 0px 24px 208px;
     padding: 24px;
     // border-radius: 20px;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .dx-home-content {
+    // padding: 40px;
+    width: 1680px;
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .dx-home-content {
+    // padding: 40px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dx-content-left {
+    display: none !important;
+  }
+  .dx-content-center {
+    width: 100% !important;
+    margin: 0 !important;
   }
 }
 

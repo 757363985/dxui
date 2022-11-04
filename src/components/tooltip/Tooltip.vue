@@ -9,7 +9,7 @@
     <!-- 在顶层通过传入的visible进行控制 -->
     <div v-show="visible !== null ? visible : true" class="dx-tooltip-max-width">
       <!-- 在内层通过组件自身的tooltipvisible进行控制 -->
-      <div v-show="tooltipVisible" class="dx-tooltip-content-warpper">
+      <div v-show="tooltipVisible" class="dx-tooltip-dx-page-content-warpper">
         <div
           class="tooltip-title"
           v-if="showDefaultTitle"
@@ -157,7 +157,7 @@ export default {
     width: 100%;
   }
 
-  .dx-tooltip-content-warpper {
+  .dx-tooltip-dx-page-content-warpper {
     display: inline-block;
     text-align: initial;
     min-width: 80px;
@@ -235,7 +235,7 @@ export default {
     transform: translateX(-50%);
   }
 
-  .dx-tooltip-content-warpper {
+  .dx-tooltip-dx-page-content-warpper {
     position: absolute;
   }
 
@@ -259,7 +259,7 @@ export default {
     left: 50%;
     transform: translateX(-50%);
   }
-  .dx-tooltip-content-warpper {
+  .dx-tooltip-dx-page-content-warpper {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -281,7 +281,7 @@ export default {
     right: 0;
   }
 
-  .dx-tooltip-content-warpper {
+  .dx-tooltip-dx-page-content-warpper {
     position: absolute;
     right: 0;
   }
@@ -305,7 +305,7 @@ export default {
     top: 50%;
   }
 
-  .dx-tooltip-content-warpper {
+  .dx-tooltip-dx-page-content-warpper {
     position: absolute;
     transform: translateX(-100%) translateY(-50%);
     left: -10px;
@@ -326,7 +326,7 @@ export default {
     margin-left: calc(100% + 10px);
   }
 
-  .dx-tooltip-content-warpper {
+  .dx-tooltip-dx-page-content-warpper {
     position: absolute;
     transform: translateY(-50%);
   }

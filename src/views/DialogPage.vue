@@ -1,7 +1,7 @@
 <template>
-  <div class="content-warpper">
+  <div class="dx-page-content-warpper">
     <h1>Dialog</h1>
-    <CardGroup :columnNumber="2">
+    <CardGroup :columnNumber="1">
       <Card title="常规的dialog">
         <Button @click="changeNormalVisible">常规的dialog</Button>
         <Dialog

@@ -1,5 +1,5 @@
 <template>
-  <div class="content-warpper">
+  <div class="dx-page-content-warpper">
     <h1>CardGroup</h1>
     <div class="components-show-warpper">
       <div class="components-show-item">

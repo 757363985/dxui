@@ -1,11 +1,11 @@
 <template>
-  <div class="content-warpper">
+  <div class="dx-page-content-warpper">
     <h1>Card</h1>
     <!-- <div class="content-breadcrumnb">
       <BreadCrumnb :config="config" />
     </div> -->
 
-    <CardGroup :columnNumber="2">
+    <CardGroup :columnNumber="1">
       <Card title="正常用法,这是title"> 这是内容 </Card>
 
       <Card>
@@ -24,6 +24,8 @@
         </Card>
       </Card>
 
+      <Card border title="这是有border的card"> 这是有border的card </Card>
+
       <Card>
         <h4>一张简单的card，没有标题</h4>
         <p>只需要定义内容</p>
@@ -34,54 +36,50 @@
         <p>background="#f8f8f8"</p>
       </Card>
 
-      <Card background="#f8f8f8" hover="boxShadow">
+      <Card hover="boxShadow">
         <h4>hover boxShadow</h4>
         <p>hover="boxShadow"</p>
       </Card>
 
-      <Card background="#f8f8f8" hover="floatUp">
+      <Card hover="floatUp">
         <h4>hover floatUp</h4>
         <p>hover="floatUp"</p>
       </Card>
 
-      <Card background="#f8f8f8" hover="enlarge">
+      <Card hover="enlarge">
         <h4>hover enlarge</h4>
         <p>hover="enlarge"</p>
       </Card>
 
-      <Card background="#f8f8f8" hover="floatUp boxShadow">
+      <Card hover="floatUp boxShadow">
         <h4>hover floatUp boxShadow</h4>
         <p>hover="floatUp boxShadow"</p>
       </Card>
 
-      <Card background="#f8f8f8" hover="enlarge boxShadow">
+      <Card hover="enlarge boxShadow">
         <h4>hover enlarge boxShadow</h4>
         <p>hover="enlarge boxShadow"</p>
       </Card>
     </CardGroup>
 
-    <div class="components-show-item">
-      <h2>结合CardGroup组件使用更加方便</h2>
-      <P>columnNumber="3" columnNumber表示每行有多少列</P>
-      <CardGroup :columnNumber="3">
-        <Card>Hover</Card>
-        <Card>Hover</Card>
-        <Card :title="3">Hover</Card>
-        <Card :title="3">Hover</Card>
-      </CardGroup>
-    </div>
+    <h2>结合CardGroup组件使用更加方便</h2>
+    <p class="dx-components-description">columnNumber="3" columnNumber表示每行有多少列</p>
+    <CardGroup :columnNumber="3">
+      <Card>Hover</Card>
+      <Card>Hover</Card>
+      <Card :title="3">Hover</Card>
+      <Card :title="3">Hover</Card>
+    </CardGroup>
 
-    <div class="components-show-item">
-      <h2>结合CardGroup组件使用更加方便</h2>
-      <P>columnNumber="4" columnNumber表示每行有多少列</P>
-      <p>columnNumber支持2-99的数字</p>
-      <CardGroup :columnNumber="4">
-        <Card>Hover</Card>
-        <Card>Hover</Card>
-        <Card :title="4">Hover</Card>
-        <Card :title="4">Hover</Card>
-      </CardGroup>
-    </div>
+    <h2>结合CardGroup组件使用更加方便</h2>
+    <p class="dx-components-description">columnNumber="4" columnNumber表示每行有多少列</p>
+    <p class="dx-components-description">columnNumber支持2-99的数字</p>
+    <CardGroup :columnNumber="4">
+      <Card>Hover</Card>
+      <Card>Hover</Card>
+      <Card :title="4">Hover</Card>
+      <Card :title="4">Hover</Card>
+    </CardGroup>
   </div>
 </template>
 

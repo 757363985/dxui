@@ -1,11 +1,11 @@
 <template>
-  <div class="content-warpper">
+  <div class="dx-page-content-warpper">
     <h1>Button</h1>
     <!-- <div class="content-breadcrumnb">
       <BreadCrumnb :config="config1" />
     </div> -->
 
-    <CardGroup :columnNumber="2">
+    <CardGroup :columnNumber="1">
       <Card title="size属性">
         <Button size="large">
           <span>large</span>

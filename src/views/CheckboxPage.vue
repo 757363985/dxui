@@ -1,11 +1,11 @@
 <template>
-  <div class="content-warpper">
+  <div class="dx-page-content-warpper">
     <h1>Checkbox</h1>
     <!-- <div class="content-breadcrumnb">
       <BreadCrumnb :config="breadConfig" />
     </div> -->
 
-    <CardGroup :columnNumber="2">
+    <CardGroup :columnNumber="1">
       <Card title="基本用法">
         <Checkbox />
       </Card>
@@ -84,7 +84,6 @@ import { Options, Vue } from 'vue-class-component'
 import Card from '@/components/card/Card.vue'
 import CardGroup from '@/components/cardGroup/CardGroup.vue'
 import Checkbox from '@/components/checkbox/Checkbox.vue'
-import { reactive, ref } from 'vue'
 
 @Options({
   components: {
