@@ -1,9 +1,8 @@
 <template>
   <div>
-    <pre class="dx-code-warpper">
-      <code class="language-html">
+    <!-- <pre class="dx-code-warpper"> -->
+      <!-- <code class="language-html"> -->
         <Codemirror
-          ref="cm"
           v-model="contentHtml"
           :options="cmOptions"
           :extensions="extensions"
@@ -11,60 +10,74 @@
           :style="{ height: 'auto' }"
           :autofocus="true"
           :indent-with-tab="true"
-          :tabSize="2"
-        ></Codemirror>
-      </code>
-    </pre>
+          :tabSize="1"
+          :disabled="readOnly"
+          :indentWithTab="true"
+        >
+        </Codemirror>
+      <!-- </code> -->
+    <!-- </pre> -->
   </div>
 </template>
 
 <script lang="ts">
-import { ComponentInternalInstance, getCurrentInstance, PropType, ref, SetupContext } from 'vue'
-// import { useRouter } from 'vue-router'
+import { ref, watch } from 'vue'
 import { Codemirror } from 'vue-codemirror'
 import { javascript } from '@codemirror/lang-javascript'
+import { html } from '@codemirror/lang-html'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { Data } from './types/index'
 
 export default {
   props: {
-    // 通过传递类名，来自定义样式
-    className: {
+    // 是否启用只可读
+    readOnly: {
       require: false,
-      default: '',
-      type: String
+      default: true,
+      type: Boolean
     },
     content: {
       require: true,
-      default: '',
-      type: String
+      default: ''
+    }
+  },
+  data: () => {
+    return {
+      codeContent: ''
     }
   },
   components: {
     Codemirror
   },
-  setup(props: Data, ctx: SetupContext) {
-    const currentInstance: ComponentInternalInstance | null = getCurrentInstance()
-    const contentRef = ref(props.content)
-    console.log(ctx)
-    console.log(currentInstance)
-    const contentHtml = '11'
-    const extensions = [javascript(), oneDark]
+  setup(props: Data) {
+    const contentHtml = ref(props.content)
+    const extensions = [javascript(), html(), oneDark]
     const cmOptions = {
       // 语言及语法模式
-      mode: 'text/x-sql',
+      mode: 'text/javascript',
       // 主题
-      theme: 'idea',
+      theme: 'base16-dark',
+      readOnly: true,
+      disabled: true,
       // 显示函数
       line: true,
       lineNumbers: true,
       // 软换行
       lineWrapping: true,
       // tab宽度
-      tabSize: 4
+      tabSize: 0
     }
+
+    watch(
+      () => props.content,
+      (newVal) => {
+        contentHtml.value = newVal
+      },
+      {
+        deep: true
+      }
+    )
     return {
-      contentRef,
       contentHtml,
       cmOptions,
       extensions
@@ -75,9 +88,11 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/scss/layout.scss';
+
 .dx-code-warpper {
   background: $black-color;
   color: $white-color;
   border-radius: 4px;
+  margin: 12px 0;
 }
 </style>

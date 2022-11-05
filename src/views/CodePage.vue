@@ -4,7 +4,7 @@
 
     <CardGroup :columnNumber="1">
       <Card title="基本用法">
-        <Code></Code>
+        <Code :content="content1"> </Code>
       </Card>
     </CardGroup>
   </div>
@@ -22,7 +22,14 @@ export default {
     Code
   },
   setup() {
-    return {}
+    const content1 = `
+      import Code from '@/components/code/Code.vue'
+      123456
+      <button>展示代码之用</button>
+    `
+    return {
+      content1
+    }
   }
 }
 </script>

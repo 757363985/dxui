@@ -37,6 +37,9 @@
         <router-link active-class="dx-nav-active-button" to="/home/code">
           <div class="dx-nav-button">code</div>
         </router-link>
+        <router-link active-class="dx-nav-active-button" to="/home/tag">
+          <div class="dx-nav-button">tag</div>
+        </router-link>
       </div>
 
       <div class="dx-content-center">
@@ -119,8 +122,8 @@ export default {
     box-shadow: 0 8px 12px #ebedf0;
     padding: 24px 0;
     display: inline-block;
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 80px;
     bottom: 0;
   }
 
