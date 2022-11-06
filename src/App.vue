@@ -27,6 +27,9 @@ body {
   h1 {
     margin-bottom: 24px;
   }
+  h4 {
+    margin-bottom: 12px;
+  }
 }
 
 @media screen and (max-width: 1280px) {

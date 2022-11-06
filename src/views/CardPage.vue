@@ -67,8 +67,8 @@
     <CardGroup :columnNumber="3">
       <Card>Hover</Card>
       <Card>Hover</Card>
-      <Card :title="3">Hover</Card>
-      <Card :title="3">Hover</Card>
+      <Card title="3">Hover</Card>
+      <Card title="3">Hover</Card>
     </CardGroup>
 
     <h2>结合CardGroup组件使用更加方便</h2>
@@ -77,8 +77,8 @@
     <CardGroup :columnNumber="4">
       <Card>Hover</Card>
       <Card>Hover</Card>
-      <Card :title="4">Hover</Card>
-      <Card :title="4">Hover</Card>
+      <Card title="4">Hover</Card>
+      <Card title="4">Hover</Card>
     </CardGroup>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="dx-code-warpper">
     <!-- <pre class="dx-code-warpper"> -->
       <!-- <code class="language-html"> -->
         <Codemirror

@@ -2,7 +2,7 @@
   <div class="dx-page-content-warpper">
     <h1>Tag</h1>
 
-    <CardGroup :columnNumber="2">
+    <CardGroup :columnNumber="1">
       <Card title="基本用法">
         <Tag>12346</Tag>
         <Code :content="`<Tag>12346</Tag>`" />

@@ -34,11 +34,14 @@
         <router-link active-class="dx-nav-active-button" to="/home/switch">
           <div class="dx-nav-button">switch</div>
         </router-link>
-        <router-link active-class="dx-nav-active-button" to="/home/code">
+        <!-- <router-link active-class="dx-nav-active-button" to="/home/code">
           <div class="dx-nav-button">code</div>
-        </router-link>
+        </router-link> -->
         <router-link active-class="dx-nav-active-button" to="/home/tag">
           <div class="dx-nav-button">tag</div>
+        </router-link>
+        <router-link active-class="dx-nav-active-button" to="/home/animationIcon">
+          <div class="dx-nav-button">animationIcon</div>
         </router-link>
       </div>
 

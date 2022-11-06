@@ -67,6 +67,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'tag',
         name: 'Tag',
         component: () => import(/* webpackChunkName: "Tag" */ '../views/TagPage.vue')
+      },
+      {
+        path: 'animationIcon',
+        name: 'AnimationIconPage',
+        component: () => import(/* webpackChunkName: "AnimationIconPage" */ '../views/AnimationIconPage.vue')
       }
     ]
   },

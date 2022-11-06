@@ -6226,6 +6226,11 @@
   "resolved" "https://registry.npmjs.org/loglevel/-/loglevel-1.8.0.tgz"
   "version" "1.8.0"
 
+"lottie-web@^5.9.6":
+  "integrity" "sha512-JFs7KsHwflugH5qIXBpB4905yC1Sub2MZWtl/elvO/QC6qj1ApqbUZJyjzJseJUtVpgiDaXQLjBlIJGS7UUUXA=="
+  "resolved" "https://registry.npmjs.org/lottie-web/-/lottie-web-5.9.6.tgz"
+  "version" "5.9.6"
+
 "lower-case@^1.1.1":
   "integrity" "sha512-2Fgx1Ycm599x+WGpIYwJOvsjmXFzTSc34IwDWALRA/8AopUKAVPwfJ+h5+f85BCp0PWmmJcWzEpxOpoXycMpdA=="
   "resolved" "https://registry.npmjs.org/lower-case/-/lower-case-1.1.4.tgz"
