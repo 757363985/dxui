@@ -19,18 +19,7 @@
 </template>
 
 <script lang="ts">
-import {
-  onMounted,
-  PropType,
-  ref,
-  SetupContext,
-  provide,
-  ComponentInternalInstance,
-  getCurrentInstance,
-  watchEffect,
-  watch,
-  reactive
-} from 'vue'
+import { onMounted, PropType, ref, SetupContext, provide, watch, reactive } from 'vue'
 import { useShowSlotOrDefaultNode } from '@/common/index'
 
 import { Data, Option, CheckedValue } from './types/index'
@@ -80,7 +69,6 @@ export default {
     Checkbox
   },
   setup(props: Data, ctx: SetupContext) {
-    const currentInstance: ComponentInternalInstance | null = getCurrentInstance()
     const showSlots = useShowSlotOrDefaultNode(ctx)
     const checkboxGroup: any = ref(null)
     let nowValue: string[] = []
@@ -104,10 +92,11 @@ export default {
           nowValue.splice(index, 1)
         }
       }
+      if (typeof props.cheboxGroupChange === 'function') {
+        props.cheboxGroupChange(nowValue)
+      }
       ctx.emit('checkboxGroupChange', nowValue)
     }
-
-    // watchEffect(() => {})
 
     const reactiveValue = reactive({
       disabled: props.disabled,

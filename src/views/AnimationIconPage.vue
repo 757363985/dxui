@@ -51,7 +51,7 @@
           jsonDataName="PHONE_RINGING"
         />
         <p class="dx-components-description">
-          autoplay为true时，会从渲染后自动播放，为false则只会在鼠标移入时开始播放，默认为false
+          autoplay为true时，会从渲染后自动播放，为false则只会在鼠标移入时开始播放，默认为true
         </p>
         <Code
           :content="`
