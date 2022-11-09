@@ -134,7 +134,7 @@ export default {
     AnimationIcon
   },
   setup() {
-    const AnimationIconList = ['PHONE_RINGING', 'ADDRESS', 'BELL', 'CLOCK', 'CHECK_CIRCLE', 'DOWNLOAD_CLOUD']
+    const AnimationIconList = ['PHONE_RINGING', 'ADDRESS', 'BELL', 'CLOCK', 'CHECK_CIRCLE', 'DOWNLOAD_CLOUD', 'GEAR']
     return {
       AnimationIconList
     }
