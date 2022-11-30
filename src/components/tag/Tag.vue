@@ -18,8 +18,6 @@
 
 <script lang="ts">
 import {
-  ComponentInternalInstance,
-  getCurrentInstance,
   PropType,
   ref,
   CSSProperties,
@@ -47,7 +45,6 @@ export default {
     }
   },
   setup(props: Data, ctx: SetupContext) {
-    const currentInstance: ComponentInternalInstance | null = getCurrentInstance()
     const tagShow = ref(true)
     const colorTagClass = ref(`dx-color-tag-${props.color}`)
 

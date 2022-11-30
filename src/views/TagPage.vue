@@ -85,7 +85,7 @@
         </p>
         <Code
           :content="`
-          <Tag @tagClick='closeClick' closable>点击回调</Tag>
+          <Tag @closeClick='closeClick' closable>点击回调</Tag>
           <script>
           export default {
             components: {

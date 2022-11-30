@@ -43,6 +43,9 @@
         <router-link active-class="dx-nav-active-button" to="/home/animationIcon">
           <div class="dx-nav-button">animationIcon</div>
         </router-link>
+        <router-link active-class="dx-nav-active-button" to="/home/slider">
+          <div class="dx-nav-button">slider</div>
+        </router-link>
       </div>
 
       <div class="dx-content-center">

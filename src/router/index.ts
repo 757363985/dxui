@@ -72,6 +72,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'animationIcon',
         name: 'AnimationIconPage',
         component: () => import(/* webpackChunkName: "AnimationIconPage" */ '../views/AnimationIconPage.vue')
+      },
+      {
+        path: 'slider',
+        name: 'SliderPage',
+        component: () => import(/* webpackChunkName: "SliderPage" */ '../views/SliderPage.vue')
       }
     ]
   },
