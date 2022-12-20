@@ -46,6 +46,9 @@
         <router-link active-class="dx-nav-active-button" to="/home/slider">
           <div class="dx-nav-button">slider</div>
         </router-link>
+        <router-link active-class="dx-nav-active-button" to="/home/select">
+          <div class="dx-nav-button">select</div>
+        </router-link>
       </div>
 
       <div class="dx-content-center">

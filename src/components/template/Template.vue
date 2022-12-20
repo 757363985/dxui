@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { ComponentInternalInstance, getCurrentInstance, PropType, ref } from 'vue'
+import { ref, SetupContext } from 'vue'
 // import { useRouter } from 'vue-router'
 
 import { Data } from './types/index'
@@ -17,15 +17,11 @@ export default {
       type: String
     }
   },
-  async setup(props: Data) {
-    const currentInstance: ComponentInternalInstance | null = getCurrentInstance()
+  setup(props: Data, context: SetupContext) {
+    // const currentInstance: ComponentInternalInstance | null = getCurrentInstance()
     const someData = ref('dx')
-    const result = await new Promise((resolve, reject) => {
-      setTimeout(() => {
-        return resolve({ someData })
-      }, 3000)
-    })
-    return result
+
+    return someData
   }
 }
 </script>

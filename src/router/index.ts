@@ -77,6 +77,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'slider',
         name: 'SliderPage',
         component: () => import(/* webpackChunkName: "SliderPage" */ '../views/SliderPage.vue')
+      },
+      {
+        path: 'select',
+        name: 'SelectPage',
+        component: () => import(/* webpackChunkName: "SelectPage" */ '../views/SelectPage.vue')
       }
     ]
   },
