@@ -362,6 +362,26 @@ export default {
     }
   }
 
+  // 改变滚动条的盒子
+  ::-webkit-scrollbar {
+    width: 6px;
+    background-color: #fff;
+  }
+  // 改变滚动条轨道
+  ::-webkit-scrollbar-track {
+    // border-radius: 10px;
+    display: none;
+  }
+  // 改变滚动条的内容
+  ::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: $grey-color;
+  }
+  /*定义最上方和最下方的按钮*/
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+
   .dx-select-options-warpper {
     width: 100%;
     position: absolute;
@@ -372,6 +392,8 @@ export default {
     box-shadow: 2px 2px 20px rgb(0 0 0 / 29%);
     border-radius: 4px;
     z-index: 1000;
+    max-height: 120px;
+    overflow-y: auto;
 
     .dx-select-options-item {
       line-height: 28px;

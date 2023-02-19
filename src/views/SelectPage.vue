@@ -154,7 +154,11 @@ export default {
     return {
       options1: [
         { name: 'dx', value: 18 },
-        { name: 'yx', value: 19 }
+        { name: 'yx', value: 19 },
+        { name: 'dx1', value: 20 },
+        { name: 'yx2', value: 21 },
+        { name: 'dx3', value: 22 },
+        { name: 'yx4', value: 23 }
       ],
       options2: [
         { name: 'dx', value: 18, selected: true },
