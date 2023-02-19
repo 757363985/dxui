@@ -4,17 +4,132 @@
 
     <CardGroup :columnNumber="2">
       <Card title="基本用法">
-        <div>123</div>
-        <p class="dx-components-description">简单介绍</p>
-        <Select />
-      </Card>
-      <Card title="代码展示">
+        <Select :options="options1" />
         <Code
           :content="`
-<Card title=&quot;基本用法&quot;>
-  <div>123</div>
-  <p class=&quot;dx-components-description&quot;>简单介绍</p>
-</Card>
+<Select :options='options1' />
+export default {
+  components: {
+    Select
+  },
+  data() {
+    return {
+      options1: [
+        { name: 'dx', value: 18 },
+        { name: 'yx', value: 19 }
+      ]
+    }
+  }
+}
+          `"
+        />
+      </Card>
+      <Card title="多选">
+        <Select :options="options1" type="multiple" />
+        <Code
+          :content="`
+<Select :options='options1' type='multiple'/>
+export default {
+  components: {
+    Select
+  },
+  data() {
+    return {
+      options1: [
+        { name: 'dx', value: 18 },
+        { name: 'yx', value: 19 }
+      ]
+    }
+  }
+}
+          `"
+        />
+      </Card>
+
+      <Card title="设置初始值">
+        <Select :options="options2" type="multiple" />
+        <Code
+          :content="`
+<Select :options='options1' type='multiple'/>
+export default {
+  components: {
+    Select
+  },
+  data() {
+    return {
+      options1: [
+        { name: 'dx', value: 18, selected: true },
+        { name: 'yx', value: 19 }
+      ]
+    }
+  }
+}
+          `"
+        />
+      </Card>
+
+      <Card title="禁用">
+        <Select :options="options2" :disabled="true" type="multiple" />
+        <Code
+          :content="`
+<Select :options='options1' />
+export default {
+  components: {
+    Select
+  },
+  data() {
+    return {
+      options1: [
+        { name: 'dx', value: 18 },
+        { name: 'yx', value: 19 }
+      ]
+    }
+  }
+}
+          `"
+        />
+      </Card>
+
+      <Card title="tag模式">
+        <Select :options="options2" mode="tag" type="multiple" />
+        <Code
+          :content="`
+<Select :options='options1' mode='tag' type='multiple' />
+export default {
+  components: {
+    Select
+  },
+  data() {
+    return {
+      options1: [
+        { name: 'dx', value: 18 },
+        { name: 'yx', value: 19 }
+      ]
+    }
+  }
+}
+          `"
+        />
+      </Card>
+
+      <Card title="search模式">
+        <Select :options="options2" mode="tag" type="multiple" :search="true" />
+        <Code
+          :content="`
+<Select :options='options1' mode='tag' type='multiple' :search='true' />
+export default {
+  components: {
+    Select
+  },
+  data() {
+    return {
+      options1: [
+        { name: 'dx', value: 18 },
+        { name: 'yx', value: 19 }
+      ]
+    }
+  }
+}
           `"
         />
       </Card>
@@ -34,6 +149,18 @@ export default {
     CardGroup,
     Code,
     Select
+  },
+  data() {
+    return {
+      options1: [
+        { name: 'dx', value: 18 },
+        { name: 'yx', value: 19 }
+      ],
+      options2: [
+        { name: 'dx', value: 18, selected: true },
+        { name: 'yx', value: 19 }
+      ]
+    }
   }
 }
 </script>
