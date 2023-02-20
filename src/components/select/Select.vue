@@ -20,7 +20,6 @@
           <span v-else>
             {{ selectInputValue }}
           </span>
-          <!-- <input type="text" class="dx-select-input-focus" ref="inputFocus" /> -->
         </div>
 
         <input
@@ -61,7 +60,7 @@
 </template>
 
 <script lang="ts">
-import { ref, SetupContext, reactive, watch, onMounted } from 'vue'
+import { ref, SetupContext, reactive, watch, onMounted, toRaw } from 'vue'
 import { Data, OptionItem } from './types/index'
 // import { useRouter } from 'vue-router'
 import Tag from '@/components/tag/Tag.vue'
@@ -200,6 +199,7 @@ export default {
           selectInputDataArray.push(item)
         }
       }
+      context.emit('changeSelect', toRaw(selectInputDataArray))
     }
 
     // 删除被选中的option
@@ -210,6 +210,7 @@ export default {
       }
       if (selectStatus.value === 'focus' && selectInputDataArray.length > 0) {
         selectInputDataArray.pop()
+        context.emit('changeSelect', toRaw(selectInputDataArray))
       }
     }
 
@@ -220,6 +221,7 @@ export default {
         return selectItem.value === item.value
       })
       selectInputDataArray.splice(findIndex, 1)
+      context.emit('changeSelect', toRaw(selectInputDataArray))
     }
 
     watch(

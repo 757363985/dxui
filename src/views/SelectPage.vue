@@ -24,6 +24,27 @@ export default {
           `"
         />
       </Card>
+      <Card title="placeholder">
+        <Select :options="options1" placeholder="请选择一个选项" />
+        <Code
+          :content="`
+<Select :options='options1' placeholder='请选择一个选项' />
+export default {
+  components: {
+    Select
+  },
+  data() {
+    return {
+      options1: [
+        { name: 'dx', value: 18 },
+        { name: 'yx', value: 19 }
+      ]
+    }
+  }
+}
+          `"
+        />
+      </Card>
       <Card title="多选">
         <Select :options="options1" type="multiple" />
         <Code
@@ -133,6 +154,33 @@ export default {
           `"
         />
       </Card>
+
+      <Card title="change监听">
+        <Select :options="options1" mode="tag" type="multiple" @changeSelect="changeSelect" />
+        <Code
+          :content="`
+<Select :options='options1' mode='tag' type='multiple' @changeSelect='changeSelect' />
+export default {
+  components: {
+    Select
+  },
+  data() {
+    return {
+      options1: [
+        { name: 'dx', value: 18 },
+        { name: 'yx', value: 19 }
+      ]
+    }
+  },
+  methods: {
+    changeSelect(params) {
+      console.log(params)
+    }
+  }
+}
+          `"
+        />
+      </Card>
     </CardGroup>
   </div>
 </template>
@@ -154,16 +202,17 @@ export default {
     return {
       options1: [
         { name: 'dx', value: 18 },
-        { name: 'yx', value: 19 },
-        { name: 'dx1', value: 20 },
-        { name: 'yx2', value: 21 },
-        { name: 'dx3', value: 22 },
-        { name: 'yx4', value: 23 }
+        { name: 'yx', value: 19 }
       ],
       options2: [
         { name: 'dx', value: 18, selected: true },
         { name: 'yx', value: 19 }
       ]
+    }
+  },
+  methods: {
+    changeSelect(params) {
+      console.log(params)
     }
   }
 }
