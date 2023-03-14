@@ -315,7 +315,9 @@ export default {
     line-height: 30px;
     font-size: 14px;
     margin-right: 6px;
-    width: calc(100% - 24px);
+    overflow: hidden;
+    white-space: nowrap;
+    width: calc(100% - 26px);
   }
 
   .dx-select-has-content {
@@ -347,7 +349,7 @@ export default {
     display: inline-block;
     height: 100%;
     line-height: 30px;
-    font-size: 22px;
+    font-size: 18px;
     color: $grey-color;
     &::before {
       content: '\2228';

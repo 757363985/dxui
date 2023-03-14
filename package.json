@@ -1,11 +1,17 @@
 {
-  "name": "dxui",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue3-dxui",
+  "version": "1.0.9",
+  "files": [
+    "dxui"
+  ],
+  "main": "./dxui/dxui.common.js",
+  "browser": "./dxui/dxui.umd.js",
+  "types": "./dxui/components/dxui/index.d.ts",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-dxui": "vue-cli-service build --target lib ./src/components/dxui/index.ts --name dxui --dest dxui"
   },
   "dependencies": {
     "@codemirror/lang-html": "^6.1.3",
@@ -39,7 +45,8 @@
     "eslint-plugin-vue": "^7.0.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "typescript": "~4.1.5"
+    "typescript": "~4.1.5",
+    "vue3-dxui": "^1.0.9"
   },
   "eslintConfig": {
     "root": true,

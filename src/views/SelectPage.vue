@@ -2,7 +2,7 @@
   <div class="dx-page-content-warpper">
     <h1>Select</h1>
 
-    <CardGroup :columnNumber="2">
+    <CardGroup :columnNumber="1">
       <Card title="基本用法">
         <Select :options="options1" />
         <Code
@@ -182,21 +182,26 @@ export default {
         />
       </Card>
     </CardGroup>
+    <Button @click="handleClickButton">11111</Button>
+    <Tag :closable="true">2222</Tag>
   </div>
 </template>
 
-<script>
+<script lang="ts" scoped>
 import Card from '@/components/card/Card.vue'
 import CardGroup from '@/components/cardGroup/CardGroup.vue'
 import Code from '@/components/code/Code.vue'
 import Select from '@/components/select/Select.vue'
+import { Button, Tag } from 'vue3-dxui'
 
 export default {
   components: {
     Card,
     CardGroup,
     Code,
-    Select
+    Select,
+    Button,
+    Tag
   },
   data() {
     return {
@@ -211,11 +216,18 @@ export default {
     }
   },
   methods: {
-    changeSelect(params) {
+    changeSelect(params:any) {
       console.log(params)
+      // console.log(getRandomNumber)
+      // console.log(Button)
+    },
+    handleClickButton() {
+      console.log(1111)
     }
   }
 }
 </script>
 
-<style></style>
+<style>
+
+</style>
