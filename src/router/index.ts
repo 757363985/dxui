@@ -82,6 +82,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'select',
         name: 'SelectPage',
         component: () => import(/* webpackChunkName: "SelectPage" */ '../views/SelectPage.vue')
+      },
+      {
+        path: 'message',
+        name: 'MessagePage',
+        component: () => import(/* webpackChunkName: "SelectPage" */ '../views/MessagePage.vue')
       }
     ]
   },

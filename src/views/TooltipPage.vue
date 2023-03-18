@@ -172,4 +172,4 @@ export default class TooltipPage extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style></style>

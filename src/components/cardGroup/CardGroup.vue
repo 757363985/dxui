@@ -40,25 +40,25 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '@/scss/layout.scss';
 .dx-card-group-warpper {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  ::v-deep .dx-card-warpper {
-    margin-bottom: 12px;
+  .dx-card-warpper {
+    margin-bottom: 12px !important;
   }
 }
 
 @for $i from 2 through 99 {
   .count-number-#{$i} {
-    ::v-deep .dx-card-warpper {
-      width: calc(96% / #{$i});
-      margin-right: calc(4% / #{$i - 1});
+    .dx-card-warpper {
+      width: calc(96% / #{$i}) !important;
+      margin-right: calc(4% / #{$i - 1}) !important;
     }
-    ::v-deep .dx-card-warpper:nth-child(#{$i}n + #{$i}) {
+    .dx-card-warpper:nth-child(#{$i}n + #{$i}) {
       margin-right: 0 !important;
     }
   }

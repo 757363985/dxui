@@ -3057,7 +3057,7 @@
     "chalk" "^2.4.1"
     "q" "^1.1.2"
 
-"codemirror@6.x":
+"codemirror@^6.0.1", "codemirror@6.x":
   "integrity" "sha512-J8j+nZ+CdWmIeFIGXEFbFPtpiYacFMDR8GlHK3IyHQJMCaVRfGx9NT+Hxivv1ckLWPvNdZqndbr/7lVhrf/Svg=="
   "resolved" "https://registry.npmjs.org/codemirror/-/codemirror-6.0.1.tgz"
   "version" "6.0.1"

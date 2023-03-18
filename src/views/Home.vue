@@ -49,6 +49,10 @@
         <router-link active-class="dx-nav-active-button" to="/home/select">
           <div class="dx-nav-button">select</div>
         </router-link>
+
+        <router-link active-class="dx-nav-active-button" to="/home/message">
+          <div class="dx-nav-button">message</div>
+        </router-link>
       </div>
 
       <div class="dx-content-center">
@@ -77,7 +81,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '@/scss/layout.scss';
 .dx-home {
   // background: url(../assets/home_back.jpg);

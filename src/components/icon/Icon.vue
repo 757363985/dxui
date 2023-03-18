@@ -1,31 +1,36 @@
 <template>
-  <div>{{ someData }}</div>
+  <span class="dx-icon iconfont" :class="className" :style="style"></span>
 </template>
 
 <script lang="ts">
-import { ref, SetupContext } from 'vue'
-// import { useRouter } from 'vue-router'
+import { ref, SetupContext, PropType, CSSProperties } from 'vue'
 
 import { Data } from './types/index'
 
 export default {
+  name: 'Icon',
   props: {
     // 通过传递类名，来自定义样式
-    className: {
+    iconName: {
       require: false,
-      default: '',
+      default: 'anquan',
       type: String
-    }
+    },
+    // 自定义样式
+    style: Object as PropType<CSSProperties>
   },
   setup(props: Data, context: SetupContext) {
     // const currentInstance: ComponentInternalInstance | null = getCurrentInstance()
-    const someData = ref('dx')
+    const className = ref(`icon-${props.iconName}`)
 
-    return someData
+    return {
+      className
+    }
   }
 }
 </script>
 
 <style lang="scss">
 @import '@/scss/layout.scss';
+@import '@/font/iconfont.scss';
 </style>

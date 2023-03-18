@@ -182,26 +182,21 @@ export default {
         />
       </Card>
     </CardGroup>
-    <Button @click="handleClickButton">11111</Button>
-    <Tag :closable="true">2222</Tag>
   </div>
 </template>
 
-<script lang="ts" scoped>
+<script lang="ts">
 import Card from '@/components/card/Card.vue'
 import CardGroup from '@/components/cardGroup/CardGroup.vue'
 import Code from '@/components/code/Code.vue'
 import Select from '@/components/select/Select.vue'
-import { Button, Tag } from 'vue3-dxui'
 
 export default {
   components: {
     Card,
     CardGroup,
     Code,
-    Select,
-    Button,
-    Tag
+    Select
   },
   data() {
     return {
@@ -216,7 +211,7 @@ export default {
     }
   },
   methods: {
-    changeSelect(params:any) {
+    changeSelect(params: any) {
       console.log(params)
       // console.log(getRandomNumber)
       // console.log(Button)
@@ -228,6 +223,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
