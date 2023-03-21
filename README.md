@@ -1,7 +1,11 @@
 ## 安装
 
 ```javascript
-    npm install vue3-dxui -D
+    npm install vue3-dxui --save
+```
+或者
+```javascript
+    yarn add vue3-dxui
 ```
 
 ## 使用
@@ -70,7 +74,12 @@ declare module 'vue3-dxui'
 </script>
 ```
 
+## 组件目录
+
+
 ## 其它内容介绍
-[csdn介绍vue3-dxui的使用](https://dengxi.blog.csdn.net/article/details/129508840)
-[dxui网站介绍](http://www.dxyx-together.cn/#/home/button)
-[github](https://github.com/757363985/dxui)
+[csdn介绍vue3-dxui的使用 https://dengxi.blog.csdn.net/article/details/129508840](https://dengxi.blog.csdn.net/article/details/129508840)
+\
+[dxui网站介绍 http://www.dxyx-together.cn/#/home/button](http://www.dxyx-together.cn/#/home/button)
+\
+[github https://github.com/757363985/dxui](https://github.com/757363985/dxui)

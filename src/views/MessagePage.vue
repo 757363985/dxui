@@ -64,10 +64,7 @@
 import Card from '@/components/card/Card.vue'
 import CardGroup from '@/components/cardGroup/CardGroup.vue'
 import Code from '@/components/code/Code.vue'
-import { Button } from 'vue3-dxui'
-// import Message from '@/components/message/Message.vue'
-import MessageApi from '@/components/message/Message'
-import { ComponentInternalInstance, getCurrentInstance } from 'vue'
+import { MessageApi, Button } from 'vue3-dxui'
 
 export default {
   components: {

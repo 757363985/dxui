@@ -1,6 +1,6 @@
 <template>
   <div v-if="messageShow" class="dx-message" :class="`dx-message-${iconType}`" :style="style">
-    <Icon :iconName="iconName" :style="{ 'vertical-align': 'baseline' }" />
+    <Icon :iconName="iconType" :style="{ 'vertical-align': 'baseline' }" />
     <span class="dx-message-content">{{ content }}</span>
   </div>
 </template>
@@ -12,13 +12,6 @@ import { ref, SetupContext, PropType, CSSProperties } from 'vue'
 import Icon from '@/components/icon/Icon.vue'
 
 import { Data } from './types/index'
-
-const ICON_TYPE: { [key: string]: string } = {
-  info: 'gantanhao1',
-  success: 'dui',
-  warning: 'jingtanhao',
-  error: 'error'
-}
 
 export default {
   props: {
@@ -52,14 +45,14 @@ export default {
     // const currentInstance: ComponentInternalInstance | null = getCurrentInstance()
     const messageShow = ref(true)
     const iconType = ref(props.type)
-    const iconName = ref(ICON_TYPE[iconType.value])
+    // const iconName = ref(props.type)
 
     setTimeout(() => {
       messageShow.value = false
     }, props.duration as number)
     return {
       messageShow,
-      iconName,
+      // iconName,
       iconType
     }
   }

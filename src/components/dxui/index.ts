@@ -10,6 +10,8 @@ import Switch from '../switch/Switch.vue'
 import Tag from '../tag/Tag.vue'
 import Tooltip from '../tooltip/Tooltip.vue'
 import AnimationIcon from '../animationIcon/AnimationIcon.vue'
+import MessageApi from '../message/Message'
+import Icon from '../icon/Icon.vue'
 
 // 分别导出，让别人可以按需引入
 export {
@@ -24,7 +26,9 @@ export {
   Switch,
   Tag,
   Tooltip,
-  AnimationIcon
+  AnimationIcon,
+  MessageApi,
+  Icon
 }
 
 const component = [
@@ -39,7 +43,8 @@ const component = [
   Switch,
   Tag,
   Tooltip,
-  AnimationIcon
+  AnimationIcon,
+  Icon
 ]
 
 const Dxui = {
