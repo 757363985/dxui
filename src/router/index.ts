@@ -1,6 +1,23 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 
+export const COMPONENTS = [
+  'Button',
+  'Card',
+  'CardGroup',
+  'Dialog',
+  'Tooltip',
+  'BreadCrumb',
+  'Checkbox',
+  'CheckboxGroup',
+  'Switch',
+  'Tag',
+  'AnimationIcon',
+  'Slider',
+  'Select',
+  'Message'
+]
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -11,84 +28,13 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Home',
     component: Home,
     redirect: '/home/button',
-    children: [
-      {
-        path: 'button',
-        name: 'Button',
-        component: () => import(/* webpackChunkName: "button" */ '../views/ButtonPage.vue')
-      },
-      {
-        path: 'card',
-        name: 'Card',
-        component: () => import(/* webpackChunkName: "Card" */ '../views/CardPage.vue')
-      },
-      {
-        path: 'dialog',
-        name: 'Dialog',
-        component: () => import(/* webpackChunkName: "Dialog" */ '../views/DialogPage.vue')
-      },
-      {
-        path: 'tooltip',
-        name: 'Tooltip',
-        component: () => import(/* webpackChunkName: "Dialog" */ '../views/TooltipPage.vue')
-      },
-      {
-        path: 'cardgroup',
-        name: 'CardGroup',
-        component: () => import(/* webpackChunkName: "CardGroup" */ '../views/CardGroupPage.vue')
-      },
-      {
-        path: 'breadCrumb',
-        name: 'BreadCrumb',
-        component: () => import(/* webpackChunkName: "BreadCrumb" */ '../views/BreadCrumbPage.vue')
-      },
-      {
-        path: 'checkbox',
-        name: 'Checkbox',
-        component: () => import(/* webpackChunkName: "Checkbox" */ '../views/CheckboxPage.vue')
-      },
-      {
-        path: 'checkboxGroup',
-        name: 'CheckboxGroup',
-        component: () =>
-          import(/* webpackChunkName: "CheckboxGroup" */ '../views/CheckboxGroupPage.vue')
-      },
-      {
-        path: 'switch',
-        name: 'Switch',
-        component: () => import(/* webpackChunkName: "Switch" */ '../views/SwitchPage.vue')
-      },
-      {
-        path: 'code',
-        name: 'Code',
-        component: () => import(/* webpackChunkName: "Code" */ '../views/CodePage.vue')
-      },
-      {
-        path: 'tag',
-        name: 'Tag',
-        component: () => import(/* webpackChunkName: "Tag" */ '../views/TagPage.vue')
-      },
-      {
-        path: 'animationIcon',
-        name: 'AnimationIconPage',
-        component: () => import(/* webpackChunkName: "AnimationIconPage" */ '../views/AnimationIconPage.vue')
-      },
-      {
-        path: 'slider',
-        name: 'SliderPage',
-        component: () => import(/* webpackChunkName: "SliderPage" */ '../views/SliderPage.vue')
-      },
-      {
-        path: 'select',
-        name: 'SelectPage',
-        component: () => import(/* webpackChunkName: "SelectPage" */ '../views/SelectPage.vue')
-      },
-      {
-        path: 'message',
-        name: 'MessagePage',
-        component: () => import(/* webpackChunkName: "SelectPage" */ '../views/MessagePage.vue')
+    children: COMPONENTS.map(function(item) {
+      return {
+        path: item.toLocaleLowerCase(),
+        name: item,
+        component: () => import(/* webpackChunkName: "" */ `../views/${item}Page.vue`)
       }
-    ]
+    })
   },
   {
     path: '/about',

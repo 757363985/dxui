@@ -10,48 +10,13 @@
     <div class="dx-home-content">
       <div class="dx-content-left">
         <h4 class="dx-nav-button">组件名称</h4>
-        <router-link active-class="dx-nav-active-button" to="/home/button">
-          <div class="dx-nav-button">button</div>
-        </router-link>
-        <router-link active-class="dx-nav-active-button" to="/home/dialog">
-          <div class="dx-nav-button">dialog</div>
-        </router-link>
-        <router-link active-class="dx-nav-active-button" to="/home/tooltip">
-          <div class="dx-nav-button">tooltip</div>
-        </router-link>
-        <router-link active-class="dx-nav-active-button" to="/home/card">
-          <div class="dx-nav-button">card</div>
-        </router-link>
-        <router-link active-class="dx-nav-active-button" to="/home/breadCrumb">
-          <div class="dx-nav-button">breadCrumb</div>
-        </router-link>
-        <router-link active-class="dx-nav-active-button" to="/home/checkbox">
-          <div class="dx-nav-button">checkbox</div>
-        </router-link>
-        <router-link active-class="dx-nav-active-button" to="/home/checkboxgroup">
-          <div class="dx-nav-button">checkboxGroup</div>
-        </router-link>
-        <router-link active-class="dx-nav-active-button" to="/home/switch">
-          <div class="dx-nav-button">switch</div>
-        </router-link>
-        <!-- <router-link active-class="dx-nav-active-button" to="/home/code">
-          <div class="dx-nav-button">code</div>
-        </router-link> -->
-        <router-link active-class="dx-nav-active-button" to="/home/tag">
-          <div class="dx-nav-button">tag</div>
-        </router-link>
-        <router-link active-class="dx-nav-active-button" to="/home/animationIcon">
-          <div class="dx-nav-button">animationIcon</div>
-        </router-link>
-        <router-link active-class="dx-nav-active-button" to="/home/slider">
-          <div class="dx-nav-button">slider</div>
-        </router-link>
-        <router-link active-class="dx-nav-active-button" to="/home/select">
-          <div class="dx-nav-button">select</div>
-        </router-link>
-
-        <router-link active-class="dx-nav-active-button" to="/home/message">
-          <div class="dx-nav-button">message</div>
+        <router-link
+          v-for="item in componentsList"
+          :key="item"
+          active-class="dx-nav-active-button"
+          :to="`/home/${item.toLowerCase()}`"
+        >
+          <div class="dx-nav-button">{{ item.toLowerCase() }}</div>
         </router-link>
       </div>
 
@@ -66,7 +31,8 @@
 
 <script lang="ts">
 import { useRoute } from 'vue-router'
-
+import { COMPONENTS } from '@/router/index'
+import { reactive } from 'vue'
 // import Button from '@/components/button/Button.vue'
 
 export default {
@@ -75,8 +41,11 @@ export default {
   },
   setup() {
     const route = useRoute()
-    console.log(route.query)
-    console.log(route.params)
+    const componentsList = reactive(COMPONENTS)
+
+    return {
+      componentsList
+    }
   }
 }
 </script>

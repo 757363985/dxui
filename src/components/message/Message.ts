@@ -1,4 +1,4 @@
-import Vue, { createVNode, render } from 'vue'
+import { createVNode, render } from 'vue'
 import Message from '@/components/message/Message.vue'
 
 let div: any = ''
