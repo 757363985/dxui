@@ -15,7 +15,8 @@ export const COMPONENTS = [
   'AnimationIcon',
   'Slider',
   'Select',
-  'Message'
+  'Message',
+  'Affix'
 ]
 
 const routes: Array<RouteRecordRaw> = [
