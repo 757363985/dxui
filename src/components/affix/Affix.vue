@@ -55,7 +55,7 @@ export default {
       zIndex: props.zIndex
     })
 
-    const affixTarget = ref<any>(null)
+    const affixTarget = ref<any>()
 
     const fixed = ref(false)
 

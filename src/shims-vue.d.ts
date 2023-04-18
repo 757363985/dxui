@@ -6,3 +6,4 @@ declare module '*.vue' {
 }
 
 declare module 'vue3-dxui'
+declare module '@/../dxui/dxui.common'

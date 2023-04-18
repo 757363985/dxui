@@ -12,6 +12,7 @@ import Tooltip from '../tooltip/Tooltip.vue'
 import AnimationIcon from '../animationIcon/AnimationIcon.vue'
 import MessageApi from '../message/Message'
 import Icon from '../icon/Icon.vue'
+import Affix from '../affix/Affix.vue'
 
 // 分别导出，让别人可以按需引入
 export {
@@ -28,7 +29,8 @@ export {
   Tooltip,
   AnimationIcon,
   MessageApi,
-  Icon
+  Icon,
+  Affix
 }
 
 const component = [
@@ -44,7 +46,8 @@ const component = [
   Tag,
   Tooltip,
   AnimationIcon,
-  Icon
+  Icon,
+  Affix
 ]
 
 const Dxui = {

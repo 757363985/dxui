@@ -103,11 +103,8 @@ setup() {
 </template>
 
 <script lang="ts" scoped>
-import Card from '@/components/card/Card.vue'
-import CardGroup from '@/components/cardGroup/CardGroup.vue'
 import Code from '@/components/code/Code.vue'
-import { Button } from 'vue3-dxui'
-import Affix from '@/components/affix/Affix.vue'
+import { Button, Affix, CardGroup, Card } from 'vue3-dxui'
 
 export default {
   components: {
