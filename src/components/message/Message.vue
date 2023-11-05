@@ -49,11 +49,11 @@ export default {
         info: 'info',
         success: 'check-circle',
         warning: 'alert-triangle',
-        error: 'x-circle',
+        error: 'x-circle'
       }
 
       return iconTypeMap[`${props.type}`]
-    }) 
+    })
     // const iconName = ref(props.type)
 
     setTimeout(() => {

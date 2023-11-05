@@ -43,10 +43,11 @@
 </template>
 
 <script>
-import Card from '@/components/card/Card.vue'
-import CardGroup from '@/components/cardGroup/CardGroup.vue'
+// import Card from '@/components/card/Card.vue'
+// import CardGroup from '@/components/cardGroup/CardGroup.vue'
 import Code from '@/components/code/Code.vue'
-import Icon from '@/components/icon/Icon.vue'
+// import Icon from '@/components/icon/Icon.vue'
+import { Icon, Card, CardGroup } from 'vue3-dxui'
 
 export default {
   components: {

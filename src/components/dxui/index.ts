@@ -13,7 +13,8 @@ import AnimationIcon from '../animationIcon/AnimationIcon.vue'
 import MessageApi from '../message/Message'
 import Icon from '../icon/Icon.vue'
 import Affix from '../affix/Affix.vue'
-
+import Carousel from '../carousel/Carousel.vue'
+import CarouselItem from '../carousel/CarouselItem.vue'
 // 分别导出，让别人可以按需引入
 export {
   Button,
@@ -30,7 +31,9 @@ export {
   AnimationIcon,
   MessageApi,
   Icon,
-  Affix
+  Affix,
+  Carousel,
+  CarouselItem
 }
 
 const component = [
@@ -47,7 +50,9 @@ const component = [
   Tooltip,
   AnimationIcon,
   Icon,
-  Affix
+  Affix,
+  Carousel,
+  CarouselItem
 ]
 
 const Dxui = {

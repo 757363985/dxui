@@ -61,10 +61,8 @@
 </template>
 
 <script lang="ts" scoped>
-import Card from '@/components/card/Card.vue'
-import CardGroup from '@/components/cardGroup/CardGroup.vue'
 import Code from '@/components/code/Code.vue'
-import { MessageApi, Button } from 'vue3-dxui'
+import { MessageApi, Button, CardGroup, Card } from 'vue3-dxui'
 
 export default {
   components: {
