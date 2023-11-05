@@ -25,9 +25,9 @@ body {
   text-align: initial;
   display: inline-block;
   h1 {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
-  h4 {
+  h4,h2 {
     margin-bottom: 12px;
   }
 }
@@ -67,7 +67,7 @@ body {
 }
 
 .dx-components-description {
-  margin: 8px 0;
+  margin: 14px 0;
 }
 
 .dx-button-divide {

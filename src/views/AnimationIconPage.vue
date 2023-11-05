@@ -1,8 +1,12 @@
 <template>
   <div class="dx-page-content-warpper">
-    <h1>AnimationIcon</h1>
+    <h1>AnimationIcon 动态图标</h1>
 
-    <h4>内置的动画icon</h4>
+    <p class="dx-components-description">
+      动态图标是指可以在响应用户交互或特定事件时进行变化或动画的图标。这些图标不是静态的，而是能够根据应用程序的状态或用户操作而进行实时更新或产生动画效果。
+    </p>
+
+    <h2>内置的动画</h2>
 
     <CardGroup :columnNumber="6">
       <Card v-for="item in AnimationIconList" :key="item">
@@ -13,7 +17,9 @@
       </Card>
     </CardGroup>
 
-    <CardGroup :columnNumber="1">
+    <h2>代码演示</h2>
+
+    <CardGroup :columnNumber="2">
       <Card title="基本用法">
         <AnimationIcon width="36px" height="36px" jsonDataName="PHONE_RINGING" />
         <AnimationIcon width="36px" height="36px" jsonDataName="ADDRESS" />

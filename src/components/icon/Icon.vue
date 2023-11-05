@@ -1,5 +1,5 @@
 <template>
-  <span class="dx-icon iconfont" :class="className" :style="style"></span>
+  <span class="dx-icon icomoon" :class="className" :style="style"></span>
 </template>
 
 <script lang="ts">
@@ -32,5 +32,5 @@ export default {
 
 <style lang="scss">
 @import '@/scss/layout.scss';
-@import '@/font/iconfont.scss';
+@import '@/fonts/icomoon.scss';
 </style>

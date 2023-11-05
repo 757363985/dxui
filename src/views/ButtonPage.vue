@@ -5,7 +5,7 @@
       <BreadCrumnb :config="config1" />
     </div> -->
 
-    <CardGroup :columnNumber="1">
+    <CardGroup :columnNumber="2">
       <Card title="size属性">
         <Button size="large">
           <span>large</span>

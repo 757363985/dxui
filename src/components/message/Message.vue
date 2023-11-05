@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { ref, SetupContext, PropType, CSSProperties } from 'vue'
+import { ref, SetupContext, PropType, CSSProperties, computed } from 'vue'
 
 // import { useRouter } from 'vue-router'
 import Icon from '@/components/icon/Icon.vue'
@@ -44,7 +44,16 @@ export default {
   setup(props: Data, context: SetupContext) {
     // const currentInstance: ComponentInternalInstance | null = getCurrentInstance()
     const messageShow = ref(true)
-    const iconType = ref(props.type)
+    const iconType = computed(() => {
+      const iconTypeMap: any = {
+        info: 'info',
+        success: 'check-circle',
+        warning: 'alert-triangle',
+        error: 'x-circle',
+      }
+
+      return iconTypeMap[`${props.type}`]
+    }) 
     // const iconName = ref(props.type)
 
     setTimeout(() => {

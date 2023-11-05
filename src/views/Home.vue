@@ -5,18 +5,23 @@
         <img class="dx-logo-img" src="../assets/logo.png" alt="" srcset="" />
         <h1>DXUI</h1>
       </div>
-      <div class="dx-home-notice">欢迎体验 dxui, 持续更新中哦</div>
+      <div class="dx-home-notice">dxui组件库有了新的域名，dxui.cn</div>
+      <div class="dx-home-link">
+        <a class="dx-github-link" href="https://github.com/757363985/dxui" target="_blank">
+          <span class="icon-github"> </span>
+        </a>
+      </div>
     </nav>
     <div class="dx-home-content">
       <div class="dx-content-left">
         <h4 class="dx-nav-button">组件名称</h4>
         <router-link
           v-for="item in componentsList"
-          :key="item"
+          :key="item.id"
           active-class="dx-nav-active-button"
-          :to="`/home/${item.toLowerCase()}`"
+          :to="`/home/${item.id.toLowerCase()}`"
         >
-          <div class="dx-nav-button">{{ item.toLowerCase() }}</div>
+          <div class="dx-nav-button">{{item.id}} {{item.name}}</div>
         </router-link>
       </div>
 
@@ -88,6 +93,16 @@ export default {
     line-height: 80px;
     color: $white-color;
   }
+
+  .dx-home-link {
+    line-height: 80px;
+
+    .dx-github-link {
+      color: $white-color;
+      font-size: 18px;
+      padding: 0 12px;
+    }
+  }
 }
 
 .dx-home-content {
@@ -98,47 +113,47 @@ export default {
   position: relative;
 
   .dx-content-left {
-    width: 208px;
+    width: 248px;
     // height: calc(100vh - 80px);
     background-color: #fff;
     box-shadow: 0 8px 12px #ebedf0;
-    padding: 24px 0;
+    padding: 24px 4px;
     display: inline-block;
     position: fixed;
     top: 80px;
     bottom: 0;
+    font-size: 14px;
   }
 
   .dx-nav-button {
     width: 100%;
     // line-height: 36px;
     color: $black-light-color;
-    padding: 8px 0 8px 24px;
+    padding: 8px 24px 8px 24px;
     cursor: pointer;
     &:hover {
       background: $background-color;
       color: #000;
     }
+    border-radius: 6px;
+    margin-bottom: 4px;
   }
 
   .dx-nav-active-button {
     .dx-nav-button {
       width: 100%;
       // line-height: 36px;
-      padding: 8px 0 8px 24px;
       cursor: pointer;
       background: #d9eef7 !important;
+      color: $blue-color;
     }
   }
   .dx-content-center {
     display: inline-block;
-    width: calc(100% - 208px);
+    width: calc(100% - 248px);
     vertical-align: top;
-    // background: #fff;
-    // box-shadow: 0 8px 12px #ebedf0;
-    margin: 0px 0px 24px 208px;
+    margin: 0px 0px 24px 248px;
     padding: 24px;
-    // border-radius: 20px;
   }
 }
 
