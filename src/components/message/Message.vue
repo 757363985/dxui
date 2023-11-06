@@ -1,5 +1,5 @@
 <template>
-  <div v-if="messageShow" class="dx-message" :class="`dx-message-${iconType}`" :style="style">
+  <div v-if="messageShow" class="dx-message" :class="`dx-message-${type}`" :style="style">
     <Icon :iconName="iconType" :style="{ 'vertical-align': 'baseline' }" />
     <span class="dx-message-content">{{ content }}</span>
   </div>

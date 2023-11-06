@@ -62,8 +62,7 @@
 
 <script lang="ts" scoped>
 import Code from '@/components/code/Code.vue'
-import { MessageApi, Button, CardGroup, Card } from 'vue3-dxui'
-
+import { Button, CardGroup, Card, MessageApi } from 'vue3-dxui'
 export default {
   components: {
     Card,

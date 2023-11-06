@@ -9525,10 +9525,10 @@
     "@vue/server-renderer" "3.2.37"
     "@vue/shared" "3.2.37"
 
-"vue3-dxui@^1.1.5", "vue3-dxui@^1.1.6":
-  "integrity" "sha512-Zrn+Q2o2kkyf3CaQz6PyExA0gSNdKBdDdbu4wZl3lbGPTRM/YFRso4jQut0lwx9idbCcI8DY7PJuZU+4RJ731Q=="
-  "resolved" "https://registry.npmjs.org/vue3-dxui/-/vue3-dxui-1.1.6.tgz"
-  "version" "1.1.6"
+"vue3-dxui@^1.1.6", "vue3-dxui@^1.1.7":
+  "integrity" "sha512-XYepmOMFAieITL/I7udW9h3AeXe38/DAqe2OEmTqmbGH9V+0wkXYisXR88f5c/L0vlqSyiiDaMTNd3va2oHMlg=="
+  "resolved" "https://registry.npmjs.org/vue3-dxui/-/vue3-dxui-1.1.7.tgz"
+  "version" "1.1.7"
   dependencies:
     "@codemirror/lang-html" "^6.1.3"
     "@codemirror/lang-javascript" "^6.1.1"
@@ -9540,7 +9540,7 @@
     "vue-class-component" "^8.0.0-0"
     "vue-codemirror" "^6.1.1"
     "vue-router" "^4.0.0-0"
-    "vue3-dxui" "^1.1.5"
+    "vue3-dxui" "^1.1.6"
     "vuex" "^4.0.0-0"
 
 "vuex@^4.0.0-0":
