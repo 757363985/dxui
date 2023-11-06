@@ -4,12 +4,11 @@
     <div class="components-show-warpper">
       <div class="components-show-item">
         <h2>结合cardGroup使用更加方便</h2>
-        <CardGroup :countNumber="3">
+        <CardGroup :columnNumber="3">
           <Card>Hover</Card>
           <Card>Hover</Card>
           <Card :title="3">Hover</Card>
           <Card :title="3">Hover</Card>
-
         </CardGroup>
       </div>
     </div>

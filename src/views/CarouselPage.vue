@@ -241,10 +241,10 @@
 // import Card from '@/components/card/Card.vue'
 // import CardGroup from '@/components/cardGroup/CardGroup.vue'
 import Code from '@/components/code/Code.vue'
-// import Carousel from '@/components/carousel/Carousel.vue'
-// import CarouselItem from '@/components/carousel/CarouselItem.vue'
+import Carousel from '@/components/carousel/Carousel.vue'
+import CarouselItem from '@/components/carousel/CarouselItem.vue'
 
-import { Carousel, Card, CardGroup, CarouselItem } from 'vue3-dxui'
+import { Card, CardGroup } from 'vue3-dxui'
 
 export default {
   components: {

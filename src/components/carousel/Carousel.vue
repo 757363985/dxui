@@ -25,6 +25,7 @@
         :class="index === currentIndex ? 'active' : ''"
         v-for="(item, index) in realCountArray"
         :key="index"
+        @click="clickDot(index)"
       ></span>
     </div>
   </div>
@@ -284,6 +285,12 @@ export default {
       }
     }
 
+    // 点击跳转圆点移动到对应的距离
+    const clickDot = (dotIndex: number) => {
+      showIndex.value = dotIndex + props.visionCount
+      leftVal.value = -(itemWidth.value + props.gap) * showIndex.value
+    }
+
     onMounted(() => {
       // 初始偏移item的数量
       showIndex.value = props.visionCount
@@ -325,7 +332,8 @@ export default {
       warpper,
       currentIndex,
       clickNextItem,
-      clickPreItem
+      clickPreItem,
+      clickDot
     }
   }
 }
@@ -393,6 +401,7 @@ export default {
       border: $black-border;
       display: inline-block;
       margin-right: 8px;
+      cursor: pointer;
     }
     .carousel-point-item:last-child {
       margin-right: 0;

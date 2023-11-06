@@ -123,6 +123,7 @@ export default {
     top: 80px;
     bottom: 0;
     font-size: 14px;
+    overflow: auto;
   }
 
   .dx-nav-button {

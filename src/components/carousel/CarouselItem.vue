@@ -7,13 +7,9 @@
 <script lang="ts">
 import {
   ref,
-  SetupContext,
   onMounted,
-  ComponentInternalInstance,
-  getCurrentInstance,
   inject
 } from 'vue'
-// import { useRouter } from 'vue-router'
 
 export default {
   name: 'CarouselItem',
@@ -24,6 +20,7 @@ export default {
     // item 的间距
     const gap = ref<string>('')
 
+    // item的高度
     const height = ref<string>('')
 
     onMounted(() => {
@@ -44,7 +41,6 @@ export default {
 <style lang="scss">
 @import '@/scss/layout.scss';
 .carousel-item-warpper {
-  // background: yellow;
   height: 100%;
   display: inline-block;
   white-space: initial;
