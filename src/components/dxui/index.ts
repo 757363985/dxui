@@ -1,6 +1,7 @@
 import Button from '../button/Button.vue'
 import Card from '../card/Card.vue'
 import BreadCrumb from '../breadCrumb/Breadcrumb.vue'
+import BreadCrumbItem from '../breadCrumb/BreadcrumbItem.vue'
 import CardGroup from '../cardGroup/CardGroup.vue'
 import Checkbox from '../checkbox/Checkbox.vue'
 import CheckboxGroup from '../checkboxGroup/CheckboxGroup.vue'
@@ -11,6 +12,8 @@ import Tag from '../tag/Tag.vue'
 import Tooltip from '../tooltip/Tooltip.vue'
 import AnimationIcon from '../animationIcon/AnimationIcon.vue'
 import MessageApi from '../message/Message'
+import Message from '../message/Message.vue'
+
 import Icon from '../icon/Icon.vue'
 import Affix from '../affix/Affix.vue'
 import Carousel from '../carousel/Carousel.vue'
@@ -21,6 +24,7 @@ export {
   Card,
   CardGroup,
   BreadCrumb,
+  BreadCrumbItem,
   Checkbox,
   CheckboxGroup,
   Dialog,
@@ -41,6 +45,7 @@ const component = [
   Card,
   CardGroup,
   BreadCrumb,
+  BreadCrumbItem,
   Checkbox,
   CheckboxGroup,
   Dialog,
@@ -49,6 +54,7 @@ const component = [
   Tag,
   Tooltip,
   AnimationIcon,
+  Message,
   Icon,
   Affix,
   Carousel,
